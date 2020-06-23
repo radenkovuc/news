@@ -1,0 +1,16 @@
+{
+  "HEADER_MENU_ITEMS": {
+    "TOP_NEWS": {
+      "link": "/",
+      "text": "TOP_NEWS"
+    },
+    "CATEGORIES": {
+      "link": "/categories",
+      "text": "CATEGORIES"
+    },
+    "SEARCH": {
+      "link": "/search",
+      "text": "SEARCH"
+    }
+  }
+}

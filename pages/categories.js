@@ -14,7 +14,7 @@ const Title = styled.div`
 const Index = ({t}) => {
   return (
     <Layout>
-      <Title>{t('HOME')}</Title>
+      <Title>{t('CATEGORIES')}</Title>
     </Layout>
   )
 }
