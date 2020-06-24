@@ -5,8 +5,8 @@ const AppProvider = AppContext.Provider
 const AppConsumer = AppContext.Consumer
 
 const stateData = {
-  selectedCountry: 'US',
-  selectedNews: null
+  selectedCountry: 'us',
+  selectedArticle: null
 }
 
 export default {

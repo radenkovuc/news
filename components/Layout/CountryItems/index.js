@@ -15,6 +15,7 @@ const CountryItems = (props) => {
     {name: 'US', value: 'us'}
   ]
   const {
+    isDisabled,
     appContext: {selectedCountry, setContextData}
   } = props
   return (
@@ -25,7 +26,8 @@ const CountryItems = (props) => {
             key={name}
             text={name}
             isActive={selectedCountry === value}
-            onClick={() => setContextData({selectedCountry: value})}
+            isDisabled={isDisabled}
+            onClick={() => !isDisabled && setContextData({selectedCountry: value})}
           />
         )
       })}

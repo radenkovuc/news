@@ -1,6 +1,8 @@
 {
-  "HOME": "Home English",
+  "TOP_NEWS_FROM_GB": "Top news from Great Britain",
+  "TOP_NEWS_FROM_US": "Top news from USA",
   "TOP_NEWS": "Top news",
   "CATEGORIES":"Categories",
-  "SEARCH": "Search"
+  "SEARCH": "Search",
+  "MORE": "More"
 }

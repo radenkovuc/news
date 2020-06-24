@@ -12,5 +12,9 @@
       "link": "/search",
       "text": "SEARCH"
     }
+  },
+  "ARTICLE": {
+    "link": "/article",
+    "text": "ARTICLE"
   }
 }

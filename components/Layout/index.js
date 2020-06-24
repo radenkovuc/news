@@ -6,7 +6,7 @@ import CountryItems from './CountryItems'
 const Container = styled.div`
   margin: 10px;
   border: 1px solid #444;
-  height: 500px;
+  min-height: 500px;
 `
 const MenuContainer = styled.div`
   display: flex;
@@ -14,13 +14,13 @@ const MenuContainer = styled.div`
 `
 
 const Layout = (props) => {
-  const {children} = props
+  const {children, disableSelectionCountry} = props
 
   const renderMenu = () => {
     return (
       <MenuContainer>
         <NavigationItems />
-        <CountryItems />
+        <CountryItems isDisabled={disableSelectionCountry} />
       </MenuContainer>
     )
   }

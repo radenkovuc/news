@@ -13,7 +13,7 @@ const Title = styled.div`
 `
 const Index = ({t}) => {
   return (
-    <Layout>
+    <Layout disableSelectionCountry={true}>
       <Title>{t('ARTICLE')}</Title>
     </Layout>
   )
