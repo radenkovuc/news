@@ -12,7 +12,7 @@ const Container = styled.div`
   margin: 10px;
   padding: 15px;
 
-  @media only screen and (min-width: 742px) {
+  @media only screen and (min-width: 762px) {
     width: 300px;
   }
 `

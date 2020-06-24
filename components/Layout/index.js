@@ -4,9 +4,11 @@ import NavigationItems from './NavigationItems'
 import CountryItems from './CountryItems'
 
 const Container = styled.div`
-  margin: 10px;
   border: 1px solid #444;
-  min-height: 500px;
+  min-height: 95vh;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
 `
 const MenuContainer = styled.div`
   display: flex;
