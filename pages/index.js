@@ -4,9 +4,10 @@ import withTranslation from '../components/HOCs/withTranslation'
 import Layout from '../components/Layout'
 import {getTopNews} from '../service/NewsService'
 import withContext from '../components/HOCs/withContext'
-import ArticleCard from '../components/ArticleCard'
+import Articles from '../components/Articles'
+import {COUNTRIES} from '../common/consts.json'
 
-const Title = styled.li`
+const Title = styled.div`
   display: flex;
   margin: 15px;
   font-size: 22px;
@@ -14,14 +15,8 @@ const Title = styled.li`
   justify-content: center;
 `
 
-const Items = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-`
-
 const Index = (props) => {
-  const [news, setNews] = useState([])
+  const [articles, setArticles] = useState([])
 
   const {
     t,
@@ -35,26 +30,18 @@ const Index = (props) => {
   const loadNews = async () => {
     try {
       const response = await getTopNews(selectedCountry)
-      setNews(response.articles)
+      setArticles(response.articles)
     } catch (e) {
-      setNews([])
+      setArticles([])
     }
   }
 
-  const renderItems = () => {
-    return (
-      <Items>
-        {news.map((article, index) => {
-          return <ArticleCard key={index} article={article} />
-        })}
-      </Items>
-    )
-  }
-  const titleKey = selectedCountry === 'gb' ? 'TOP_NEWS_FROM_GB' : 'TOP_NEWS_FROM_US'
   return (
     <Layout>
-      <Title>{t(titleKey)}</Title>
-      {renderItems()}
+      <Title>
+        {t('TOP_NEWS_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}
+      </Title>
+      <Articles articles={articles} />
     </Layout>
   )
 }

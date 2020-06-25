@@ -1,0 +1,62 @@
+{
+  "HEADER_MENU_ITEMS": {
+    "TOP_NEWS": {
+      "link": "/",
+      "text": "TOP_NEWS"
+    },
+    "CATEGORIES": {
+      "link": "/categories",
+      "text": "CATEGORIES"
+    },
+    "SEARCH": {
+      "link": "/search",
+      "text": "SEARCH"
+    }
+  },
+  "ARTICLE": {
+    "link": "/article",
+    "text": "ARTICLE"
+  },
+  "COUNTRIES": {
+    "GB": {
+      "langKey": "GB",
+      "value": "gb",
+      "langKeyLong": "GB_LONG"
+    },
+    "US": {
+      "langKey": "US",
+      "value": "us",
+      "langKeyLong": "US_LONG"
+    }
+  },
+  "CATEGORIES": [
+    {
+      "name": "BUSINESS",
+      "value": "business"
+    },
+    {
+      "name": "ENTERTAINMENT",
+      "value": "entertainment"
+    },
+    {
+      "name": "GENERAL",
+      "value": "general"
+    },
+    {
+      "name": "HEALTH",
+      "value": "health"
+    },
+    {
+      "name": "SCIENCE",
+      "value": "science"
+    },
+    {
+      "name": "SPORTS",
+      "value": "sports"
+    },
+    {
+      "name": "TECHNOLOGY",
+      "value": "technology"
+    }
+  ]
+}

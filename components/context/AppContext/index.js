@@ -5,7 +5,7 @@ const AppProvider = AppContext.Provider
 const AppConsumer = AppContext.Consumer
 
 const stateData = {
-  selectedCountry: 'us',
+  selectedCountry: 'US',
   selectedArticle: null
 }
 

@@ -3,33 +3,7 @@ import React from 'react'
 import withTranslation from '../components/HOCs/withTranslation'
 import Layout from '../components/Layout'
 import withContext from '../components/HOCs/withContext'
-
-const ContentContainer = styled.div`
-  padding: 10px;
-
-  @media only screen and (min-width: 768px) {
-    padding: 30px;
-  }
-`
-
-const Title = styled.div`
-  font-size: 22px;
-  font-weight: 600;
-  font-family: 'Nunito Sans black', sans-serif;
-  text-align: start;
-  padding-bottom: 10px;
-`
-
-const Image = styled.img`
-  width: 100%;
-`
-
-const Content = styled.div`
-  font-size: 18px;
-  font-family: 'Nunito Sans black', sans-serif;
-  text-align: start;
-  padding-top: 10px;
-`
+import Article from '../components/Article'
 
 const NotFoundContainer = styled.div`
   justify-content: center;
@@ -50,16 +24,6 @@ const Index = (props) => {
     appContext: {selectedArticle}
   } = props
 
-  const renderContent = () => {
-    return (
-      <ContentContainer>
-        <Title>{selectedArticle.title}</Title>
-        <Image src={selectedArticle.urlToImage} />
-        <Content>{selectedArticle.content}</Content>
-      </ContentContainer>
-    )
-  }
-
   const renderArticleNotFound = () => {
     return (
       <NotFoundContainer>
@@ -70,7 +34,7 @@ const Index = (props) => {
 
   return (
     <Layout disableSelectionCountry={true}>
-      {selectedArticle ? renderContent() : renderArticleNotFound()}
+      {selectedArticle ? <Article article={selectedArticle} /> : renderArticleNotFound()}
     </Layout>
   )
 }

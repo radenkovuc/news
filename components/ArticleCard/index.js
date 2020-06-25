@@ -3,10 +3,11 @@ import React from 'react'
 import withTranslation from '../HOCs/withTranslation'
 import withContext from '../HOCs/withContext'
 import {Link} from '../../i18n'
-import {ARTICLE} from '../routes.json'
+import {ARTICLE} from '../../common/consts.json'
 
 const Container = styled.div`
   width: 100%;
+  min-width: 300px;
   border: 1px solid #444;
   border-radius: 10px;
   margin: 10px;
@@ -25,8 +26,10 @@ const Title = styled.div`
   text-align: left;
   font-family: 'Nunito Sans black', sans-serif;
   font-size: 18px;
+  line-height: 24px;
   overflow: hidden;
   margin-bottom: 15px;
+  min-height: 48px;
 `
 
 const Image = styled.div`
@@ -46,8 +49,10 @@ const Description = styled.div`
   text-align: left;
   font-family: 'Nunito Sans black', sans-serif;
   font-size: 16px;
+  line-height: 20px;
   overflow: hidden;
   margin-top: 15px;
+  min-height: 50px;
 `
 
 const More = styled.div`
@@ -58,7 +63,7 @@ const More = styled.div`
 `
 const MoreText = styled.div`
   font-family: 'Nunito Sans black', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   padding-right: 5px;
 `
 const MoreIcon = styled.div`

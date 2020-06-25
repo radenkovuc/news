@@ -1,9 +1,21 @@
 {
-  "TOP_NEWS_FROM_GB": "Top news from Great Britain",
-  "TOP_NEWS_FROM_US": "Top news from USA",
+  "US": "US",
+  "GB": "GB",
+  "US_LONG": "USA",
+  "GB_LONG": "Great Britain",
+  "TOP_NEWS_PAGE_TITLE": "Top news from {{country}}:",
+  "CATEGORIES_PAGE_TITLE": "Top 5 news by categories from {{country}}:",
   "TOP_NEWS": "Top news",
   "CATEGORIES":"Categories",
   "SEARCH": "Search",
   "MORE": "More",
-  "ARTICLE_NOT_FOUND": "Article not found"
+  "ARTICLE_NOT_FOUND": "Article not found",
+  "BACK_TO_LIST": "Back to list",
+  "BUSINESS": "Business",
+  "ENTERTAINMENT": "Entertainment",
+  "GENERAL": "General",
+  "HEALTH": "Health",
+  "SCIENCE": "Science",
+  "SPORTS": "Sports",
+  "TECHNOLOGY": "Technology"
 }

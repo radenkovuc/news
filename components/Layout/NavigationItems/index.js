@@ -1,4 +1,4 @@
-import {HEADER_MENU_ITEMS as headerRoutes} from '../../routes'
+import {HEADER_MENU_ITEMS as headerRoutes} from '../../../common/consts.json'
 import styled from 'styled-components'
 import React from 'react'
 import NavigationItem from './NavigationItem'
