@@ -9,6 +9,18 @@ import React, {Component} from 'react'
 
 const withContext = (ComponentToExtend) => {
   return class WrapperComponent extends Component {
+    static async getInitialProps(ctx) {
+      // Get component’s props
+      let componentProps = {}
+      if (ComponentToExtend.getInitialProps) {
+        componentProps = await ComponentToExtend.getInitialProps(ctx)
+      }
+
+      return {
+        ...componentProps
+      }
+    }
+
     render() {
       return (
         <AppContext.AppConsumer>

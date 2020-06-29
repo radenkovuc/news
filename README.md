@@ -1,30 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# News
+Web application for reading news from https://newsapi.org/docs/endpoints/top-headlines.
 
-## Getting Started
+Currently, support English and German languages
 
-First, run the development server:
+## Commands
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- dev: start next dev environment
+- build: build next files
+- start: start next server
+- test: run unit tests
+- linter:check: check for ,
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Localisation
+Localisation is done by using next-i18next mode.
+For basic usage "t" function should be used. Components defined inside "pages" directory will receive this function
+as a prop. Translation key should be passed as an argument when function is called.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Official documentation can be found at https://react.i18next.com/

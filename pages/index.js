@@ -12,7 +12,6 @@ const Title = styled.div`
   margin: 15px;
   font-size: 22px;
   font-family: 'Nunito Sans black', sans-serif;
-  justify-content: center;
 `
 
 type Props = {

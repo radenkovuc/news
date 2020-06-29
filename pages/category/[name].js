@@ -1,23 +1,69 @@
 import styled from 'styled-components'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import withTranslation from '../../components/HOCs/withTranslation'
 import Layout from '../../components/Layout'
+import {CATEGORIES, COUNTRIES} from '../../common/consts.json'
+import Articles from '../../components/Articles'
+import ContainerWithMessage from '../../components/ContainerWithMessage'
+import {getTopNews} from '../../service/NewsService'
+import withContext from '../../components/HOCs/withContext'
 
 const Title = styled.div`
-  color: black;
+  display: flex;
+  margin: 15px;
   font-size: 22px;
-  font-weight: 600;
   font-family: 'Nunito Sans black', sans-serif;
-  text-align: center;
-  align-content: center;
 `
 
-const CategoryPage = ({t}) => {
+const CategoryPage = (props) => {
+  const [articles, setArticles] = useState([])
+
+  const {
+    t,
+    category,
+    appContext: {selectedCountry}
+  } = props
+
+  const renderContent = () => {
+    return (
+      <>
+        <Title>
+          {t('CATEGORY_PAGE_TITLE', {
+            country: t(COUNTRIES[selectedCountry].langKeyLong),
+            category: t(category.name)
+          })}
+        </Title>
+        <Articles articles={articles} />
+      </>
+    )
+  }
+
+  useEffect(() => {
+    if (category) {
+      loadNews()
+    }
+  }, [selectedCountry, category])
+
+  const loadNews = async () => {
+    try {
+      const response = await getTopNews(selectedCountry, category.value)
+      setArticles(response.articles)
+    } catch (e) {
+      setArticles([])
+    }
+  }
+
   return (
     <Layout>
-      <Title>{t('CATEGORIES')}</Title>
+      {category ? renderContent() : <ContainerWithMessage message={'CATEGORY_NOT_FOUND'} />}
     </Layout>
   )
 }
 
-export default withTranslation(CategoryPage)
+CategoryPage.getInitialProps = (ctx) => {
+  const {name} = ctx.query
+  const category = CATEGORIES.find((category) => category.value === name)
+  return {category}
+}
+
+export default withContext(withTranslation(CategoryPage))

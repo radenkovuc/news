@@ -14,6 +14,7 @@ const Title = styled.div`
   font-size: 22px;
   font-family: 'Nunito Sans black', sans-serif;
 `
+
 const CategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,13 +46,15 @@ const CategoriesPage = (props: Props) => {
     try {
       const news = {}
       CATEGORIES.forEach((category) => {
-        getTopNews(COUNTRIES[selectedCountry], category.value, MAX_ARTICLES_PER_CATEGORY).then(
-          (res) => {
-            setArticles((prevState) => {
-              return {...prevState, [category.value]: {news: res.articles, expanded: false}}
-            })
-          }
-        )
+        getTopNews(
+          COUNTRIES[selectedCountry].value,
+          category.value,
+          MAX_ARTICLES_PER_CATEGORY
+        ).then((res) => {
+          setArticles((prevState) => {
+            return {...prevState, [category.value]: {news: res.articles, expanded: false}}
+          })
+        })
       })
       setArticles(news)
     } catch (e) {
