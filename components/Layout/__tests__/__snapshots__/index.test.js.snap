@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> match snapshot 1`] = `
+<div
+  className="Container-t0lxgb-0 grHKXg"
+>
+  <div
+    className="MenuContainer-t0lxgb-1 eDixhJ"
+  >
+    <div
+      className="Wrapper-sc-3didjk-0 ghaWSH"
+    >
+      <div
+        className="Item-sc-14w5znm-0 SlJzJ"
+      >
+        <span
+          className="Text-sc-14w5znm-1 jGVkFb"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          TOP_NEWS
+        </span>
+      </div>
+      <div
+        className="Item-sc-14w5znm-0 SlJzJ"
+      >
+        <span
+          className="Text-sc-14w5znm-1 jGVkFb"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          CATEGORIES
+        </span>
+      </div>
+      <div
+        className="Item-sc-14w5znm-0 SlJzJ"
+      >
+        <span
+          className="Text-sc-14w5znm-1 jGVkFb"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          SEARCH
+        </span>
+      </div>
+    </div>
+    <div
+      className="Wrapper-sc-176nf4l-0 hSHBvl"
+    >
+      <div
+        className="Item-fwh4iu-0 gPVQuN"
+        onClick={[Function]}
+      >
+        <span
+          className="Text-fwh4iu-1 kKmCFw"
+        >
+          GB
+        </span>
+      </div>
+      <div
+        className="Item-fwh4iu-0 gPVQuN"
+        onClick={[Function]}
+      >
+        <span
+          className="Text-fwh4iu-1 kKmCFw"
+        >
+          US
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

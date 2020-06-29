@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Category /> match snapshot 1`] = `
+<div
+  className="Container-fiywul-0 ZHjMz"
+>
+  <div
+    className="TitleContainer-fiywul-1 imIMts"
+  >
+    <div
+      className="Title-fiywul-2 iHHnJN"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      
+    </div>
+    <div
+      className="ShowHideIcon-fiywul-3 kcXKri"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

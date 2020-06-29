@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavigationItem /> match snapshot 1`] = `
+<div
+  className="Item-sc-14w5znm-0 SlJzJ"
+>
+  <span
+    className="Text-sc-14w5znm-1 jGVkFb"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    
+  </span>
+</div>
+`;
