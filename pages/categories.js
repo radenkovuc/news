@@ -44,19 +44,17 @@ const CategoriesPage = (props: Props) => {
 
   const loadNews = () => {
     try {
-      const news = {}
       CATEGORIES.forEach((category) => {
-        getTopNews(
-          COUNTRIES[selectedCountry].value,
-          category.value,
-          MAX_ARTICLES_PER_CATEGORY
-        ).then((res) => {
+        getTopNews({
+          country: COUNTRIES[selectedCountry].value,
+          category: category.value,
+          pageSize: MAX_ARTICLES_PER_CATEGORY
+        }).then((res) => {
           setArticles((prevState) => {
             return {...prevState, [category.value]: {news: res.articles, expanded: false}}
           })
         })
       })
-      setArticles(news)
     } catch (e) {
       setArticles([])
     }

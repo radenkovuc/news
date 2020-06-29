@@ -11,10 +11,10 @@ exports[`<Layout /> match snapshot 1`] = `
       className="Wrapper-sc-3didjk-0 ghaWSH"
     >
       <div
-        className="Item-sc-14w5znm-0 flAooz"
+        className="Item-sc-14w5znm-0 SlJzJ"
       >
         <span
-          className="Text-sc-14w5znm-1 cMAzLR"
+          className="Text-sc-14w5znm-1 jGVkFb"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -22,10 +22,10 @@ exports[`<Layout /> match snapshot 1`] = `
         </span>
       </div>
       <div
-        className="Item-sc-14w5znm-0 flAooz"
+        className="Item-sc-14w5znm-0 SlJzJ"
       >
         <span
-          className="Text-sc-14w5znm-1 cMAzLR"
+          className="Text-sc-14w5znm-1 jGVkFb"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -33,10 +33,10 @@ exports[`<Layout /> match snapshot 1`] = `
         </span>
       </div>
       <div
-        className="Item-sc-14w5znm-0 flAooz"
+        className="Item-sc-14w5znm-0 SlJzJ"
       >
         <span
-          className="Text-sc-14w5znm-1 cMAzLR"
+          className="Text-sc-14w5znm-1 jGVkFb"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -48,21 +48,21 @@ exports[`<Layout /> match snapshot 1`] = `
       className="Wrapper-sc-176nf4l-0 hSHBvl"
     >
       <div
-        className="Item-fwh4iu-0 bNiPnD"
+        className="Item-fwh4iu-0 gPVQuN"
         onClick={[Function]}
       >
         <span
-          className="Text-fwh4iu-1 KCUNf"
+          className="Text-fwh4iu-1 kKmCFw"
         >
           GB
         </span>
       </div>
       <div
-        className="Item-fwh4iu-0 bNiPnD"
+        className="Item-fwh4iu-0 gPVQuN"
         onClick={[Function]}
       >
         <span
-          className="Text-fwh4iu-1 KCUNf"
+          className="Text-fwh4iu-1 kKmCFw"
         >
           US
         </span>

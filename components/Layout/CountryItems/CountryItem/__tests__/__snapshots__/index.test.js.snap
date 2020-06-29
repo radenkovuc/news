@@ -2,11 +2,11 @@
 
 exports[`<CountryItem /> match snapshot 1`] = `
 <div
-  className="Item-fwh4iu-0 bNiPnD"
+  className="Item-fwh4iu-0 gPVQuN"
   onClick={[Function]}
 >
   <span
-    className="Text-fwh4iu-1 KCUNf"
+    className="Text-fwh4iu-1 kKmCFw"
   >
     
   </span>

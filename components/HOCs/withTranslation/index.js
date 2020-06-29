@@ -5,6 +5,8 @@
 
 import i18n from '../../../i18n'
 
-export default function withTranslation(Component, namespaces = ['common']) {
+const WithTranslation = (Component, namespaces = ['common']) => {
   return i18n.withTranslation(namespaces)(Component)
 }
+
+export default WithTranslation

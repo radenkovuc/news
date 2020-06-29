@@ -33,7 +33,7 @@ const Index = (props: Props) => {
 
   const loadNews = async () => {
     try {
-      const response = await getTopNews(selectedCountry)
+      const response = await getTopNews({country: selectedCountry})
       setArticles(response.articles)
     } catch (e) {
       setArticles([])

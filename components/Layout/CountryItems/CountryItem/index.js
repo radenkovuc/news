@@ -9,16 +9,21 @@ const Item = styled.div`
   background: ${(props) => (props.isDisabled ? '#FF6347' : props.isActive ? '#777777' : '#ffffff')};
   color: ${(props) => (props.isActive ? '#ffffff' : '#000000')};
   cursor: ${(props) => (props.isDisabled ? 'default' : 'pointer')};
-  flex: 1;
+  flex: auto;
 
   @media only screen and (min-width: 600px) {
     flex: none;
   }
 `
 const Text = styled.span`
-  padding: 20px;
-  font-size: 20px;
+  padding: 10px;
+  font-size: 18px;
   font-family: 'Nunito Sans', sans-serif;
+
+  @media only screen and (min-width: 480px) {
+    padding: 20px;
+    font-size: 20px;
+  }
 `
 
 type Props = {

@@ -46,7 +46,7 @@ const CategoryPage = (props) => {
 
   const loadNews = async () => {
     try {
-      const response = await getTopNews(selectedCountry, category.value)
+      const response = await getTopNews({country: selectedCountry, category: category.value})
       setArticles(response.articles)
     } catch (e) {
       setArticles([])

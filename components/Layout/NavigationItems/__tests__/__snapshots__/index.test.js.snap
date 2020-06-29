@@ -5,10 +5,10 @@ exports[`<NavigationItems /> match snapshot 1`] = `
   className="Wrapper-sc-3didjk-0 ghaWSH"
 >
   <div
-    className="Item-sc-14w5znm-0 flAooz"
+    className="Item-sc-14w5znm-0 SlJzJ"
   >
     <span
-      className="Text-sc-14w5znm-1 cMAzLR"
+      className="Text-sc-14w5znm-1 jGVkFb"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -16,10 +16,10 @@ exports[`<NavigationItems /> match snapshot 1`] = `
     </span>
   </div>
   <div
-    className="Item-sc-14w5znm-0 flAooz"
+    className="Item-sc-14w5znm-0 SlJzJ"
   >
     <span
-      className="Text-sc-14w5znm-1 cMAzLR"
+      className="Text-sc-14w5znm-1 jGVkFb"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -27,10 +27,10 @@ exports[`<NavigationItems /> match snapshot 1`] = `
     </span>
   </div>
   <div
-    className="Item-sc-14w5znm-0 flAooz"
+    className="Item-sc-14w5znm-0 SlJzJ"
   >
     <span
-      className="Text-sc-14w5znm-1 cMAzLR"
+      className="Text-sc-14w5znm-1 jGVkFb"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
