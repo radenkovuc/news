@@ -8,6 +8,12 @@ const Wrapper = styled.div`
   display: flex;
   align-self: center;
   margin: 0;
+  width: 100%;
+  border-bottom: 1px solid #444;
+
+  @media only screen and (min-width: 600px) {
+    width: auto;
+  }
 `
 
 const CountryItems = (props) => {

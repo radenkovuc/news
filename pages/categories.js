@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, {useEffect, useState} from 'react'
 import Layout from '../components/Layout'
-import {CATEGORIES, COUNTRIES} from '../common/consts.json'
+import {CATEGORIES, CATEGORY, COUNTRIES} from '../common/consts.json'
 import {getTopNews} from '../service/NewsService'
 import withContext from '../components/HOCs/withContext'
 import withTranslation from '../components/HOCs/withTranslation'
@@ -42,7 +42,7 @@ const Index = (props) => {
         getTopNews(COUNTRIES[selectedCountry], category.value, MAX_ARTICLES_PER_CATEGORY).then(
           (res) => {
             setArticles((prevState) => {
-              return {...prevState, [category.value]: res.articles}
+              return {...prevState, [category.value]: {news: res.articles, expanded: false}}
             })
           }
         )
@@ -54,10 +54,29 @@ const Index = (props) => {
   }
 
   const renderCategories = () => {
+    const onExpandCollapseCategory = (key) => {
+      if (articles[key]) {
+        setArticles((prevState) => {
+          return {...prevState, [key]: {...prevState[key], expanded: !prevState[key].expanded}}
+        })
+      }
+    }
+
     return (
       <CategoriesContainer>
         {CATEGORIES.map(({name, value}) => {
-          return <Category key={value} name={t(name)} articles={articles[value]} />
+          const {news, expanded} = articles[value] || {}
+          const categoryUrl = CATEGORY.link + '/' + value
+          return (
+            <Category
+              key={value}
+              link={categoryUrl}
+              title={t(name)}
+              expanded={expanded}
+              articles={news}
+              onExpandCollapseCategory={() => onExpandCollapseCategory(value)}
+            />
+          )
         })}
       </CategoriesContainer>
     )

@@ -6,14 +6,13 @@ import {Link} from '../../i18n'
 import {ARTICLE} from '../../common/consts.json'
 
 const Container = styled.div`
-  width: 100%;
-  min-width: 300px;
+  width: ${(props) => (props.useMobileStyle ? '100%' : '300px;')};
   border: 1px solid #444;
   border-radius: 10px;
   margin: 10px;
   padding: 15px;
 
-  @media only screen and (min-width: 762px) {
+  @media only screen and (min-width: 768px) {
     width: 300px;
   }
 `
@@ -73,14 +72,14 @@ const MoreIcon = styled.div`
 `
 
 const ArticleCard = (props) => {
-  const {article, appContext, t} = props
+  const {article, useMobileStyle, appContext, t} = props
 
   const onClickMore = () => {
     appContext.setContextData({selectedArticle: article})
   }
 
   return (
-    <Container>
+    <Container useMobileStyle={useMobileStyle}>
       <Title>{article.title}</Title>
       <Image url={article.urlToImage} />
       <Description>{article.description}</Description>

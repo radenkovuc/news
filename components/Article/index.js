@@ -46,7 +46,13 @@ const BackIcon = styled.div`
   background: url('/static/images/prev.svg') no-repeat center/cover;
 `
 
-const Article = ({article, t}) => {
+type Props = {
+  article: Object,
+  t: Function
+}
+
+const Article = (props: Props) => {
+  const {article, t} = props
   return (
     <ContentContainer>
       <Title>{article.title}</Title>
@@ -58,6 +64,10 @@ const Article = ({article, t}) => {
       </Back>
     </ContentContainer>
   )
+}
+
+Article.defaultProps = {
+  article: {}
 }
 
 export default withTranslation(Article)

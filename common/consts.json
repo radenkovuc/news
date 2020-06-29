@@ -17,6 +17,10 @@
     "link": "/article",
     "text": "ARTICLE"
   },
+  "CATEGORY": {
+    "link": "/category",
+    "text": "CATEGORY"
+  },
   "COUNTRIES": {
     "GB": {
       "langKey": "GB",

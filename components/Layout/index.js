@@ -12,7 +12,11 @@ const Container = styled.div`
 `
 const MenuContainer = styled.div`
   display: flex;
-  border-bottom: 1px solid #444;
+  flex-direction: column;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
 `
 
 const Layout = (props) => {

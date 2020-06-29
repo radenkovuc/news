@@ -12,7 +12,7 @@ const Articles = ({articles}) => {
   return (
     <Container>
       {articles.map((article, index) => {
-        return <ArticleCard key={index} article={article} />
+        return <ArticleCard key={index} article={article} useMobileStyle />
       })}
     </Container>
   )

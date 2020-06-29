@@ -6,9 +6,15 @@ import {withRouter} from 'next/router'
 
 const Wrapper = styled.div`
   display: flex;
+  border-bottom: 1px solid #444;
   flex: 1;
+  width: 100%;
   align-self: center;
   margin: 0;
+
+  @media only screen and (min-width: 600px) {
+    width: auto;
+  }
 `
 
 const NavigationItems = (props) => {
