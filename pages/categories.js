@@ -6,6 +6,7 @@ import {getTopNews} from '../service/NewsService'
 import withContext from '../components/HOCs/withContext'
 import withTranslation from '../components/HOCs/withTranslation'
 import Category from '../components/Category'
+import Article from '../components/Article'
 
 const Title = styled.div`
   display: flex;
@@ -23,7 +24,12 @@ const CategoriesContainer = styled.div`
 
 const MAX_ARTICLES_PER_CATEGORY = 5
 
-const Index = (props) => {
+type Props = {
+  appContext: Object,
+  t: Function
+}
+
+const CategoriesPage = (props: Props) => {
   const [articles, setArticles] = useState({})
 
   const {
@@ -92,4 +98,8 @@ const Index = (props) => {
   )
 }
 
-export default withContext(withTranslation(Index))
+Article.defaultProps = {
+  t: (t) => t
+}
+
+export default withContext(withTranslation(CategoriesPage))

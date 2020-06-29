@@ -16,7 +16,12 @@ const Wrapper = styled.div`
   }
 `
 
-const CountryItems = (props) => {
+type Props = {
+  isDisabled: Boolean,
+  appContext: Object
+}
+
+const CountryItems = (props: Props) => {
   const {
     isDisabled,
     appContext: {selectedCountry, setContextData}
@@ -42,6 +47,10 @@ const CountryItems = (props) => {
   }
 
   return <Wrapper>{countries}</Wrapper>
+}
+
+CountryItem.defaultProps = {
+  isDisabled: false
 }
 
 export default withContext(CountryItems)

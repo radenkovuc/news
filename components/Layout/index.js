@@ -19,7 +19,12 @@ const MenuContainer = styled.div`
   }
 `
 
-const Layout = (props) => {
+type Props = {
+  children: React.Component,
+  disableSelectionCountry: Boolean
+}
+
+const Layout = (props: Props) => {
   const {children, disableSelectionCountry} = props
 
   const renderMenu = () => {
@@ -37,6 +42,11 @@ const Layout = (props) => {
       {children}
     </Container>
   )
+}
+
+Layout.defaultProps = {
+  children: null,
+  disableSelectionCountry: false
 }
 
 export default Layout

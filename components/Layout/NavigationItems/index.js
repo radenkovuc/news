@@ -17,7 +17,12 @@ const Wrapper = styled.div`
   }
 `
 
-const NavigationItems = (props) => {
+type Props = {
+  router: Object
+}
+
+const NavigationItems = (props: Props) => {
+  const {router} = props
   const navItems = []
 
   // eslint-disable-next-line no-unused-vars
@@ -29,7 +34,7 @@ const NavigationItems = (props) => {
           key={headerRoutes[route].link}
           link={headerRoutes[route].link}
           text={headerRoutes[route].text}
-          isActive={props.router && props.router.route === headerRoutes[route].link}
+          isActive={router && router.route === headerRoutes[route].link}
         />
       )
     }

@@ -8,7 +8,13 @@ const Container = styled.div`
   justify-content: center;
 `
 
-const Articles = ({articles}) => {
+type Props = {
+  articles: Array
+}
+
+const Articles = (props: Props) => {
+  const {articles} = props
+
   return (
     <Container>
       {articles.map((article, index) => {
@@ -16,6 +22,10 @@ const Articles = ({articles}) => {
       })}
     </Container>
   )
+}
+
+Articles.defaultProps = {
+  articles: []
 }
 
 export default Articles

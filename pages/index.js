@@ -15,7 +15,12 @@ const Title = styled.div`
   justify-content: center;
 `
 
-const Index = (props) => {
+type Props = {
+  appContext: Object,
+  t: Function
+}
+
+const Index = (props: Props) => {
   const [articles, setArticles] = useState([])
 
   const {
@@ -44,6 +49,10 @@ const Index = (props) => {
       <Articles articles={articles} />
     </Layout>
   )
+}
+
+Index.defaultProps = {
+  t: (t) => t
 }
 
 export default withContext(withTranslation(Index))

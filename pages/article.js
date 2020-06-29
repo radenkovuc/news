@@ -18,7 +18,12 @@ const NotFoundText = styled.div`
   font-family: 'Nunito Sans black', sans-serif;
 `
 
-const Index = (props) => {
+type Props = {
+  appContext: Object,
+  t: Function
+}
+
+const ArticlePage = (props: Props) => {
   const {
     t,
     appContext: {selectedArticle}
@@ -39,4 +44,8 @@ const Index = (props) => {
   )
 }
 
-export default withContext(withTranslation(Index))
+Article.defaultProps = {
+  t: (t) => t
+}
+
+export default withContext(withTranslation(ArticlePage))

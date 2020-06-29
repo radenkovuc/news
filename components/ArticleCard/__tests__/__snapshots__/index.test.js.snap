@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleCard /> match snapshot 1`] = `
+<div
+  className="Container-sc-4ap2jm-0 gvpCMM"
+>
+  <div
+    className="Title-sc-4ap2jm-1 eFAftM"
+  />
+  <div
+    className="Image-sc-4ap2jm-2 dMdvXD"
+  />
+  <div
+    className="Description-sc-4ap2jm-3 McRdH"
+  />
+  <div
+    className="More-sc-4ap2jm-4 dzZLkd"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="MoreText-sc-4ap2jm-5 jcFjZn"
+    >
+      MORE
+    </div>
+    <div
+      className="MoreIcon-sc-4ap2jm-6 WmvRO"
+    />
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
-import withTranslation from '../components/HOCs/withTranslation'
-import Layout from '../components/Layout'
+import withTranslation from '../../components/HOCs/withTranslation'
+import Layout from '../../components/Layout'
 
 const Title = styled.div`
   color: black;
@@ -11,7 +11,8 @@ const Title = styled.div`
   text-align: center;
   align-content: center;
 `
-const Index = ({t}) => {
+
+const CategoryPage = ({t}) => {
   return (
     <Layout>
       <Title>{t('CATEGORIES')}</Title>
@@ -19,4 +20,4 @@ const Index = ({t}) => {
   )
 }
 
-export default withTranslation(Index)
+export default withTranslation(CategoryPage)

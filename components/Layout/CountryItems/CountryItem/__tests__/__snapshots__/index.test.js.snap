@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CountryItem /> match snapshot 1`] = `
+<div
+  className="Item-fwh4iu-0 bNiPnD"
+  onClick={[Function]}
+>
+  <span
+    className="Text-fwh4iu-1 KCUNf"
+  >
+    
+  </span>
+</div>
+`;

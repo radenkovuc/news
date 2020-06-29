@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Articles /> match snapshot 1`] = `
+<div
+  className="Container-pznew3-0 bIbXSN"
+/>
+`;

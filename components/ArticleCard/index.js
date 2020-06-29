@@ -71,7 +71,14 @@ const MoreIcon = styled.div`
   background: url('/static/images/next.svg') no-repeat center/cover;
 `
 
-const ArticleCard = (props) => {
+type Props = {
+  article: Object,
+  useMobileStyle: Boolean,
+  appContext: Object,
+  t: Function
+}
+
+const ArticleCard = (props: Props) => {
   const {article, useMobileStyle, appContext, t} = props
 
   const onClickMore = () => {
@@ -91,6 +98,12 @@ const ArticleCard = (props) => {
       </Link>
     </Container>
   )
+}
+
+ArticleCard.defaultProps = {
+  article: {},
+  useMobileStyle: false,
+  t: (t) => t
 }
 
 export default withContext(withTranslation(ArticleCard))

@@ -21,7 +21,15 @@ const Text = styled.span`
   font-family: 'Nunito Sans', sans-serif;
 `
 
-const CountryItem = (props) => {
+type Props = {
+  text: String,
+  isActive: Boolean,
+  isDisabled: Boolean,
+  onClick: Boolean,
+  t: Function
+}
+
+const CountryItem = (props: Props) => {
   const {text, isActive, isDisabled, onClick, t} = props
 
   return (
@@ -29,6 +37,14 @@ const CountryItem = (props) => {
       <Text>{t(text)}</Text>
     </Item>
   )
+}
+
+CountryItem.defaultProps = {
+  text: '',
+  expanded: false,
+  isDisabled: false,
+  onClick: () => {},
+  t: (t) => t
 }
 
 export default withTranslation(CountryItem)

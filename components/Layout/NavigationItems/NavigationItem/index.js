@@ -22,7 +22,14 @@ const Text = styled.span`
   font-family: 'Nunito Sans', sans-serif;
 `
 
-const NavigationItem = (props) => {
+type Props = {
+  text: String,
+  link: String,
+  isActive: Boolean,
+  t: Function
+}
+
+const NavigationItem = (props: Props) => {
   const {text, link, isActive, t} = props
 
   return (
@@ -32,6 +39,13 @@ const NavigationItem = (props) => {
       </Link>
     </Item>
   )
+}
+
+NavigationItem.defaultProps = {
+  text: '',
+  link: '',
+  isActive: false,
+  t: (t) => t
 }
 
 export default withTranslation(NavigationItem)

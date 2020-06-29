@@ -49,7 +49,17 @@ const RightArrow = styled(ArrowIcon)`
   background: url('/static/images/next.svg') no-repeat center/cover;
 `
 
-const Category = ({title, expanded, link, onExpandCollapseCategory, articles}) => {
+type Props = {
+  title: String,
+  expanded: Boolean,
+  link: String,
+  onExpandCollapseCategory: Boolean,
+  articles: Array
+}
+
+const Category = (props: Props) => {
+  const {title, expanded, link, onExpandCollapseCategory, articles} = props
+
   const renderItems = (articles) => {
     return (
       articles &&
@@ -78,6 +88,14 @@ const Category = ({title, expanded, link, onExpandCollapseCategory, articles}) =
       )}
     </Container>
   )
+}
+
+Category.defaultProps = {
+  title: '',
+  expanded: false,
+  link: '',
+  onExpandCollapseCategory: () => {},
+  articles: []
 }
 
 export default Category
