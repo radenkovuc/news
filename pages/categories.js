@@ -8,13 +8,6 @@ import withTranslation from '../components/HOCs/withTranslation'
 import Category from '../components/Category'
 import Article from '../components/Article'
 
-const Title = styled.div`
-  display: flex;
-  margin: 15px;
-  font-size: 22px;
-  font-family: 'Nunito Sans black', sans-serif;
-`
-
 const CategoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,10 +83,9 @@ const CategoriesPage = (props: Props) => {
   }
 
   return (
-    <Layout>
-      <Title>
-        {t('CATEGORIES_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}
-      </Title>
+    <Layout
+      title={t('CATEGORIES_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}
+    >
       {renderCategories()}
     </Layout>
   )

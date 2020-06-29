@@ -5,8 +5,8 @@
 
 import i18n from '../../../i18n'
 
-const WithTranslation = (Component, namespaces = ['common']) => {
+const withTranslation = (Component, namespaces = ['common']) => {
   return i18n.withTranslation(namespaces)(Component)
 }
 
-export default WithTranslation
+export default withTranslation

@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import React, {useEffect, useState} from 'react'
 import withTranslation from '../components/HOCs/withTranslation'
 import Layout from '../components/Layout'
@@ -6,13 +5,6 @@ import {getTopNews} from '../service/NewsService'
 import withContext from '../components/HOCs/withContext'
 import Articles from '../components/Articles'
 import {COUNTRIES} from '../common/consts.json'
-
-const Title = styled.div`
-  display: flex;
-  margin: 15px;
-  font-size: 22px;
-  font-family: 'Nunito Sans black', sans-serif;
-`
 
 type Props = {
   appContext: Object,
@@ -41,10 +33,7 @@ const Index = (props: Props) => {
   }
 
   return (
-    <Layout>
-      <Title>
-        {t('TOP_NEWS_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}
-      </Title>
+    <Layout title={t('TOP_NEWS_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}>
       <Articles articles={articles} />
     </Layout>
   )

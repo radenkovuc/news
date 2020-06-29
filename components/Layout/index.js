@@ -18,14 +18,21 @@ const MenuContainer = styled.div`
     flex-direction: row;
   }
 `
+const Title = styled.div`
+  display: flex;
+  margin: 15px;
+  font-size: 22px;
+  font-family: 'Nunito Sans black', sans-serif;
+`
 
 type Props = {
   children: React.Component,
+  title: String,
   disableSelectionCountry: Boolean
 }
 
 const Layout = (props: Props) => {
-  const {children, disableSelectionCountry} = props
+  const {children, title, disableSelectionCountry} = props
 
   const renderMenu = () => {
     return (
@@ -39,6 +46,7 @@ const Layout = (props: Props) => {
   return (
     <Container>
       {renderMenu()}
+      {title && <Title>{title}</Title>}
       {children}
     </Container>
   )

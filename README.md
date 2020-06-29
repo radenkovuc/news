@@ -9,7 +9,7 @@ Currently, support English and German languages
 - build: build next files
 - start: start next server
 - test: run unit tests
-- linter:check: check for ,
+- linter:check: eslint check 
 
 ## Localisation
 Localisation is done by using next-i18next mode.

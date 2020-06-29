@@ -7,13 +7,6 @@ import withContext from '../components/HOCs/withContext'
 import Articles from '../components/Articles'
 import {COUNTRIES} from '../common/consts.json'
 
-const Title = styled.div`
-  display: flex;
-  margin: 15px;
-  font-size: 22px;
-  font-family: 'Nunito Sans black', sans-serif;
-`
-
 const SearchInput = styled.input`
   margin: 15px;
   font-size: 22px;
@@ -51,8 +44,7 @@ const Index = (props: Props) => {
     setTerm(event.target.value)
   }
   return (
-    <Layout>
-      <Title>{t('SEARCH_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}</Title>
+    <Layout title={t('SEARCH_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}>
       <SearchInput value={term} onChange={handleChange} placeholder={t('SEARCH_PLACEHOLDER')} />
       <Articles articles={articles} />
     </Layout>
