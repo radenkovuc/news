@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 import withTranslation from '../HOCs/withTranslation'
 import withContext from '../HOCs/withContext'
-import {Link} from '../../i18n'
+import {Link} from '../../next-i18next.config'
 import {ARTICLE} from '../../common/consts.json'
 
 const Container = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react'
 import App from 'next/app'
-import {appWithTranslation} from '../i18n'
+import {appWithTranslation} from 'next-i18next'
 import AppContext from '../components/context/AppContext'
 
 class MyApp extends App {

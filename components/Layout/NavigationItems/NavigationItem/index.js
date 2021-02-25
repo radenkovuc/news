@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import withTranslation from '../../../HOCs/withTranslation'
-import {Link} from '../../../../i18n'
+import {Link} from '../../../../next-i18next.config'
 
 const Item = styled.div`
   display: flex;

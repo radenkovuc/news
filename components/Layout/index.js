@@ -27,13 +27,11 @@ const Title = styled.div`
 
 type Props = {
   children: React.Component,
-  title: String,
+  title?: String,
   disableSelectionCountry: Boolean
 }
 
-const Layout = (props: Props) => {
-  const {children, title, disableSelectionCountry} = props
-
+const Layout = ({children, title, disableSelectionCountry}: Props) => {
   const renderMenu = () => {
     return (
       <MenuContainer>

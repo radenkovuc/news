@@ -3,7 +3,7 @@
  * Higher-order component that wraps child component and enables next-i18next features to be used.
  */
 
-import i18n from '../../../i18n'
+import i18n from '../../../next-i18next.config'
 
 const withTranslation = (Component, namespaces = ['common']) => {
   return i18n.withTranslation(namespaces)(Component)

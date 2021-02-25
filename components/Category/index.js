@@ -2,7 +2,7 @@ import ScrollMenu from 'react-horizontal-scrolling-menu'
 import ArticleCard from '../ArticleCard'
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from '../../i18n'
+import {Link} from '../../next-i18next.config'
 
 const Container = styled.div`
   display: flex;
@@ -28,8 +28,8 @@ const Title = styled.div`
 const ShowHideIcon = styled.div`
   width: 24px;
   height: 24px;
-  background: url('/static/images/${(props) =>
-    props.expanded ? 'collapse' : 'expand'}.svg') no-repeat center/cover;
+  background: url('/static/images/${(props) => (props.expanded ? 'collapse' : 'expand')}.svg')
+    no-repeat center/cover;
   cursor: pointer;
 `
 

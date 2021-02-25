@@ -1,8 +1,10 @@
 const {getENVPath} = require('./server/common/helpers')
 const env = require('dotenv').config({path: getENVPath()}).parsed
 const webpack = require('webpack')
+const {i18n} = require('./next-i18next.config')
 
 module.exports = {
+  i18n,
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
