@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
-import withTranslation from '../components/HOCs/withTranslation'
+import {appWithTranslation} from 'next-i18next'
+
 import Layout from '../components/Layout'
 import withContext from '../components/HOCs/withContext'
 import Article from '../components/Article'
@@ -48,4 +49,4 @@ Article.defaultProps = {
   t: (t) => t
 }
 
-export default withContext(withTranslation(ArticlePage))
+export default withContext(appWithTranslation(ArticlePage))

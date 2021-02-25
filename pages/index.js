@@ -1,23 +1,18 @@
 import React, {useEffect, useState} from 'react'
-import withTranslation from '../components/HOCs/withTranslation'
-import Layout from '../components/Layout'
+import {useTranslation} from 'next-i18next'
+
 import {getTopNews} from '../service/NewsService'
-import withContext from '../components/HOCs/withContext'
-import Articles from '../components/Articles'
+
 import {COUNTRIES} from '../common/consts.json'
 
-type Props = {
-  appContext: Object,
-  t: Function
-}
+import Layout from '../components/Layout'
+import withContext from '../components/HOCs/withContext'
+import Articles from '../components/Articles'
 
-const Index = (props: Props) => {
+const Index = ({appContext}) => {
   const [articles, setArticles] = useState([])
-
-  const {
-    t,
-    appContext: {selectedCountry}
-  } = props
+  const {t} = useTranslation('common')
+  const {selectedCountry} = appContext
 
   useEffect(() => {
     loadNews()
@@ -39,8 +34,4 @@ const Index = (props: Props) => {
   )
 }
 
-Index.defaultProps = {
-  t: (t) => t
-}
-
-export default withContext(withTranslation(Index))
+export default withContext(Index)

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
-import withTranslation from '../../../HOCs/withTranslation'
-import {Link} from '../../../../next-i18next.config'
+import {useTranslation} from 'next-i18next'
+import Link from 'next/link'
 
 const Item = styled.div`
   display: flex;
@@ -36,7 +36,8 @@ type Props = {
 }
 
 const NavigationItem = (props: Props) => {
-  const {text, link, isActive, t} = props
+  const {text, link, isActive} = props
+  const {t} = useTranslation('common')
 
   return (
     <Item isActive={isActive}>
@@ -50,8 +51,7 @@ const NavigationItem = (props: Props) => {
 NavigationItem.defaultProps = {
   text: '',
   link: '',
-  isActive: false,
-  t: (t) => t
+  isActive: false
 }
 
-export default withTranslation(NavigationItem)
+export default NavigationItem

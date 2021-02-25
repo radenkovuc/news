@@ -1,6 +1,8 @@
 import NewsAPI from 'newsapi'
 
-const newsApi = new NewsAPI(process.env.NEWS_API_KEY)
+const newsApi = new NewsAPI('6a924d8da586431fa7a913062dfad941', {
+  corsProxyUrl: 'https://cors-anywhere.herokuapp.com/'
+})
 
 const DEFAULT_PAGE_SIZE = 100
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import App from 'next/app'
 import {appWithTranslation} from 'next-i18next'
+
 import AppContext from '../components/context/AppContext'
 
 class MyApp extends App {
@@ -15,8 +16,7 @@ class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
     return {
       pageProps: {
-        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
-        namespacesRequired: ['common']
+        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
       }
     }
   }

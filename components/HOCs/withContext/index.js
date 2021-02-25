@@ -1,7 +1,6 @@
 /**
  * withTranslation
  * Higher-order component that wraps child component and enables CPAppContext to be used as props.
- * @flow
  */
 
 import AppContext from '../../context/AppContext'

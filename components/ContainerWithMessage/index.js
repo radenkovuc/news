@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import withTranslation from '../HOCs/withTranslation'
+import {appWithTranslation} from 'next-i18next'
 
 const Container = styled.div`
   justify-content: center;
@@ -34,4 +34,4 @@ ContainerWithMessage.defaultProps = {
   t: (t) => t
 }
 
-export default withTranslation(ContainerWithMessage)
+export default appWithTranslation(ContainerWithMessage)

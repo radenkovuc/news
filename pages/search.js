@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 import React, {useEffect, useState} from 'react'
-import withTranslation from '../components/HOCs/withTranslation'
-import Layout from '../components/Layout'
+import {appWithTranslation} from 'next-i18next'
+
 import {getTopNews} from '../service/NewsService'
+
+import {COUNTRIES} from '../common/consts.json'
+
+import Layout from '../components/Layout'
 import withContext from '../components/HOCs/withContext'
 import Articles from '../components/Articles'
-import {COUNTRIES} from '../common/consts.json'
 
 const SearchInput = styled.input`
   margin: 15px;
@@ -55,4 +58,4 @@ Index.defaultProps = {
   t: (t) => t
 }
 
-export default withContext(withTranslation(Index))
+export default withContext(appWithTranslation(Index))

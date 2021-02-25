@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import React from 'react'
-import withTranslation from '../HOCs/withTranslation'
+import {appWithTranslation} from 'next-i18next'
+
 import withContext from '../HOCs/withContext'
-import {Link} from '../../next-i18next.config'
+import Link from 'next/link'
 import {ARTICLE} from '../../common/consts.json'
 
 const Container = styled.div`
@@ -106,4 +107,4 @@ ArticleCard.defaultProps = {
   t: (t) => t
 }
 
-export default withContext(withTranslation(ArticleCard))
+export default withContext(appWithTranslation(ArticleCard))

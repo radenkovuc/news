@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import React, {useEffect, useState} from 'react'
-import Layout from '../components/Layout'
-import {CATEGORIES, CATEGORY, COUNTRIES} from '../common/consts.json'
+import {appWithTranslation, useTranslation} from 'next-i18next'
+
 import {getTopNews} from '../service/NewsService'
+
+import {CATEGORIES, CATEGORY, COUNTRIES} from '../common/consts.json'
+
+import Layout from '../components/Layout'
 import withContext from '../components/HOCs/withContext'
-import withTranslation from '../components/HOCs/withTranslation'
 import Category from '../components/Category'
-import Article from '../components/Article'
 
 const CategoriesContainer = styled.div`
   display: flex;
@@ -19,15 +21,13 @@ const CategoriesContainer = styled.div`
 const MAX_ARTICLES_PER_CATEGORY = 5
 
 type Props = {
-  appContext: Object,
-  t: Function
+  appContext: Object
 }
 
 const CategoriesPage = (props: Props) => {
   const [articles, setArticles] = useState({})
-
+  const {t} = useTranslation()
   const {
-    t,
     appContext: {selectedCountry}
   } = props
 
@@ -91,8 +91,4 @@ const CategoriesPage = (props: Props) => {
   )
 }
 
-Article.defaultProps = {
-  t: (t) => t
-}
-
-export default withContext(withTranslation(CategoriesPage))
+export default withContext(appWithTranslation(CategoriesPage))

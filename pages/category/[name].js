@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 import React, {useEffect, useState} from 'react'
-import withTranslation from '../../components/HOCs/withTranslation'
-import Layout from '../../components/Layout'
+import {appWithTranslation} from 'next-i18next'
+
 import {CATEGORIES, COUNTRIES} from '../../common/consts.json'
+
+import {getTopNews} from '../../service/NewsService'
+
+import Layout from '../../components/Layout'
 import Articles from '../../components/Articles'
 import ContainerWithMessage from '../../components/ContainerWithMessage'
-import {getTopNews} from '../../service/NewsService'
 import withContext from '../../components/HOCs/withContext'
 
 const Title = styled.div`
@@ -66,4 +69,4 @@ CategoryPage.getInitialProps = (ctx) => {
   return {category}
 }
 
-export default withContext(withTranslation(CategoryPage))
+export default withContext(appWithTranslation(CategoryPage))
