@@ -30,13 +30,12 @@ type Props = {
   text: String,
   isActive: Boolean,
   isDisabled: Boolean,
-  onClick: Boolean,
-  t: Function
+  onClick: Boolean
 }
 
 const CountryItem = (props: Props) => {
   const {text, isActive, isDisabled, onClick} = props
-  const {t} = useTranslation('common')
+  const {t} = useTranslation()
 
   return (
     <Item isActive={isActive} isDisabled={isDisabled} onClick={onClick}>
@@ -49,8 +48,7 @@ CountryItem.defaultProps = {
   text: '',
   expanded: false,
   isDisabled: false,
-  onClick: () => {},
-  t: (t) => t
+  onClick: () => {}
 }
 
 export default CountryItem

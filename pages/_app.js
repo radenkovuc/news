@@ -1,39 +1,20 @@
-import React from 'react'
-import App from 'next/app'
+import React, {useState, createContext} from 'react'
 import {appWithTranslation} from 'next-i18next'
 
-import AppContext from '../components/context/AppContext'
+export const SelectedCountryContext = createContext()
+export const SelectedArticleContext = createContext()
 
-class MyApp extends App {
-  state = {
-    appContext: {...AppContext.stateData}
-  }
+const MyApp = ({Component, pageProps}) => {
+  const [selectedCountry, setSelectedCountry] = useState('US')
+  const [selectedArticle, setSelectedArticle] = useState()
 
-  setContextData = (data) => {
-    this.setState({appContext: {...this.state.appContext, ...data}})
-  }
-
-  static async getInitialProps({Component, ctx}) {
-    return {
-      pageProps: {
-        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
-      }
-    }
-  }
-
-  render() {
-    const {Component, pageProps} = this.props
-    return (
-      <AppContext.AppProvider
-        value={{
-          ...this.state.appContext,
-          setContextData: this.setContextData
-        }}
-      >
+  return (
+    <SelectedCountryContext.Provider value={[selectedCountry, setSelectedCountry]}>
+      <SelectedArticleContext.Provider value={[selectedArticle, setSelectedArticle]}>
         <Component {...pageProps} />
-      </AppContext.AppProvider>
-    )
-  }
+      </SelectedArticleContext.Provider>
+    </SelectedCountryContext.Provider>
+  )
 }
 
 export default appWithTranslation(MyApp)

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import React from 'react'
-import {appWithTranslation} from 'next-i18next'
 
-import withContext from '../HOCs/withContext'
 import Link from 'next/link'
 import {ARTICLE} from '../../common/consts.json'
+import {useTranslation} from 'next-i18next'
 
 const Container = styled.div`
   width: ${(props) => (props.useMobileStyle ? '100%' : '300px;')};
@@ -80,10 +79,11 @@ type Props = {
 }
 
 const ArticleCard = (props: Props) => {
-  const {article, useMobileStyle, appContext, t} = props
+  const {article, useMobileStyle} = props
+  const {t} = useTranslation()
 
   const onClickMore = () => {
-    appContext.setContextData({selectedArticle: article})
+    // appContext.setContextData({selectedArticle: article})
   }
 
   return (
@@ -103,8 +103,7 @@ const ArticleCard = (props: Props) => {
 
 ArticleCard.defaultProps = {
   article: {},
-  useMobileStyle: false,
-  t: (t) => t
+  useMobileStyle: false
 }
 
-export default withContext(appWithTranslation(ArticleCard))
+export default ArticleCard

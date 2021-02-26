@@ -1,10 +1,12 @@
 import styled from 'styled-components'
-import React from 'react'
-import {appWithTranslation} from 'next-i18next'
+import React, {useContext} from 'react'
+import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 import Layout from '../components/Layout'
-import withContext from '../components/HOCs/withContext'
 import Article from '../components/Article'
+
+import {SelectedArticleContext} from './_app'
 
 const NotFoundContainer = styled.div`
   justify-content: center;
@@ -19,16 +21,9 @@ const NotFoundText = styled.div`
   font-family: 'Nunito Sans black', sans-serif;
 `
 
-type Props = {
-  appContext: Object,
-  t: Function
-}
-
-const ArticlePage = (props: Props) => {
-  const {
-    t,
-    appContext: {selectedArticle}
-  } = props
+const ArticlePage = () => {
+  const [selectedArticle] = useContext(SelectedArticleContext)
+  const {t} = useTranslation()
 
   const renderArticleNotFound = () => {
     return (
@@ -45,8 +40,10 @@ const ArticlePage = (props: Props) => {
   )
 }
 
-Article.defaultProps = {
-  t: (t) => t
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'footer']))
+  }
+})
 
-export default withContext(appWithTranslation(ArticlePage))
+export default ArticlePage

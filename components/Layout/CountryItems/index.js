@@ -1,8 +1,11 @@
 import styled from 'styled-components'
-import React from 'react'
+import React, {useContext} from 'react'
+
 import CountryItem from './CountryItem'
-import withContext from '../../HOCs/withContext'
+
 import {COUNTRIES} from '../../../common/consts.json'
+
+import {SelectedCountryContext} from '../../../pages/_app'
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,15 +24,10 @@ type Props = {
   appContext: Object
 }
 
-const CountryItems = (props: Props) => {
-  const {
-    isDisabled,
-    appContext: {selectedCountry, setContextData}
-  } = props
-
+const CountryItems = ({isDisabled}: Props) => {
+  const [selectedCountry, setSelectedCountry] = useContext(SelectedCountryContext)
   const countries = []
 
-  // eslint-disable-next-line no-unused-vars
   for (let key in COUNTRIES) {
     // eslint-disable-next-line no-prototype-builtins
     if (COUNTRIES.hasOwnProperty(key)) {
@@ -40,7 +38,7 @@ const CountryItems = (props: Props) => {
           text={langKey}
           isActive={selectedCountry === key}
           isDisabled={isDisabled}
-          onClick={() => !isDisabled && setContextData({selectedCountry: key})}
+          onClick={() => !isDisabled && setSelectedCountry(key)}
         />
       )
     }
@@ -53,4 +51,4 @@ CountryItem.defaultProps = {
   isDisabled: false
 }
 
-export default withContext(CountryItems)
+export default CountryItems

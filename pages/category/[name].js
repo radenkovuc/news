@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import React, {useEffect, useState} from 'react'
-import {appWithTranslation} from 'next-i18next'
+import React, {useContext, useEffect, useState} from 'react'
 
 import {CATEGORIES, COUNTRIES} from '../../common/consts.json'
 
@@ -9,7 +8,9 @@ import {getTopNews} from '../../service/NewsService'
 import Layout from '../../components/Layout'
 import Articles from '../../components/Articles'
 import ContainerWithMessage from '../../components/ContainerWithMessage'
-import withContext from '../../components/HOCs/withContext'
+import {SelectedCountryContext} from '../_app'
+import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 const Title = styled.div`
   display: flex;
@@ -18,14 +19,10 @@ const Title = styled.div`
   font-family: 'Nunito Sans black', sans-serif;
 `
 
-const CategoryPage = (props) => {
+const CategoryPage = ({category}) => {
   const [articles, setArticles] = useState([])
-
-  const {
-    t,
-    category,
-    appContext: {selectedCountry}
-  } = props
+  const [selectedCountry] = useContext(SelectedCountryContext)
+  const {t} = useTranslation()
 
   const renderContent = () => {
     return (
@@ -63,10 +60,23 @@ const CategoryPage = (props) => {
   )
 }
 
-CategoryPage.getInitialProps = (ctx) => {
-  const {name} = ctx.query
-  const category = CATEGORIES.find((category) => category.value === name)
-  return {category}
+export const getStaticPaths = () => {
+  return {
+    paths: [], //indicates that no page needs be created at build time
+    fallback: 'blocking' //indicates the type of fallback
+  }
 }
 
-export default withContext(appWithTranslation(CategoryPage))
+export const getStaticProps = async ({params, locale}) => {
+  const {name} = params
+
+  const category = CATEGORIES.find((category) => category.value === name)
+  return {
+    props: {
+      category,
+      ...(await serverSideTranslations(locale, ['common']))
+    }
+  }
+}
+
+export default CategoryPage

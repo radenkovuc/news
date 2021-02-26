@@ -1,14 +1,15 @@
 import styled from 'styled-components'
-import React, {useEffect, useState} from 'react'
-import {appWithTranslation, useTranslation} from 'next-i18next'
+import React, {useContext, useEffect, useState} from 'react'
+import {useTranslation} from 'next-i18next'
 
 import {getTopNews} from '../service/NewsService'
 
 import {CATEGORIES, CATEGORY, COUNTRIES} from '../common/consts.json'
 
 import Layout from '../components/Layout'
-import withContext from '../components/HOCs/withContext'
 import Category from '../components/Category'
+import {SelectedCountryContext} from './_app'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 const CategoriesContainer = styled.div`
   display: flex;
@@ -20,16 +21,10 @@ const CategoriesContainer = styled.div`
 
 const MAX_ARTICLES_PER_CATEGORY = 5
 
-type Props = {
-  appContext: Object
-}
-
-const CategoriesPage = (props: Props) => {
+const CategoriesPage = () => {
   const [articles, setArticles] = useState({})
+  const [selectedCountry] = useContext(SelectedCountryContext)
   const {t} = useTranslation()
-  const {
-    appContext: {selectedCountry}
-  } = props
 
   useEffect(() => {
     loadNews()
@@ -91,4 +86,10 @@ const CategoriesPage = (props: Props) => {
   )
 }
 
-export default withContext(appWithTranslation(CategoriesPage))
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'footer']))
+  }
+})
+
+export default CategoriesPage

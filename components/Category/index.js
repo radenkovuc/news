@@ -2,7 +2,7 @@ import ScrollMenu from 'react-horizontal-scrolling-menu'
 import ArticleCard from '../ArticleCard'
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from '../../next-i18next.config'
+import Link from 'next/link'
 
 const Container = styled.div`
   display: flex;

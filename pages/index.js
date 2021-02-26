@@ -1,18 +1,20 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 import {getTopNews} from '../service/NewsService'
 
 import {COUNTRIES} from '../common/consts.json'
 
 import Layout from '../components/Layout'
-import withContext from '../components/HOCs/withContext'
 import Articles from '../components/Articles'
 
-const Index = ({appContext}) => {
+import {SelectedCountryContext} from './_app'
+
+const Search = () => {
   const [articles, setArticles] = useState([])
-  const {t} = useTranslation('common')
-  const {selectedCountry} = appContext
+  const [selectedCountry] = useContext(SelectedCountryContext)
+  const {t} = useTranslation()
 
   useEffect(() => {
     loadNews()
@@ -34,4 +36,10 @@ const Index = ({appContext}) => {
   )
 }
 
-export default withContext(Index)
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+})
+
+export default Search

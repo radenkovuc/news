@@ -1,14 +1,16 @@
 import styled from 'styled-components'
-import React, {useEffect, useState} from 'react'
-import {appWithTranslation} from 'next-i18next'
+import React, {useContext, useEffect, useState} from 'react'
+import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 import {getTopNews} from '../service/NewsService'
 
 import {COUNTRIES} from '../common/consts.json'
 
 import Layout from '../components/Layout'
-import withContext from '../components/HOCs/withContext'
 import Articles from '../components/Articles'
+
+import {SelectedCountryContext} from './_app'
 
 const SearchInput = styled.input`
   margin: 15px;
@@ -17,19 +19,11 @@ const SearchInput = styled.input`
   padding: 5px 20px 5px;
 `
 
-type Props = {
-  appContext: Object,
-  t: Function
-}
-
-const Index = (props: Props) => {
+const Index = () => {
   const [articles, setArticles] = useState([])
   const [term, setTerm] = useState('')
-
-  const {
-    t,
-    appContext: {selectedCountry}
-  } = props
+  const [selectedCountry] = useContext(SelectedCountryContext)
+  const {t} = useTranslation()
 
   useEffect(() => {
     loadNews()
@@ -54,8 +48,10 @@ const Index = (props: Props) => {
   )
 }
 
-Index.defaultProps = {
-  t: (t) => t
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'footer']))
+  }
+})
 
-export default withContext(appWithTranslation(Index))
+export default Index
