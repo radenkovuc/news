@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import React, {useContext, useEffect, useState} from 'react'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import React, {useContext, useEffect, useState} from 'react'
+import styled from 'styled-components'
 
 import {getTopNews} from '../service/NewsService'
 
@@ -19,7 +19,7 @@ const SearchInput = styled.input`
   padding: 5px 20px 5px;
 `
 
-const Index = () => {
+const SearchPage = () => {
   const [articles, setArticles] = useState([])
   const [term, setTerm] = useState('')
   const [selectedCountry] = useContext(SelectedCountryContext)
@@ -30,16 +30,14 @@ const Index = () => {
   }, [selectedCountry, term])
 
   const loadNews = async () => {
-    try {
-      const response = await getTopNews({country: selectedCountry, term})
-      setArticles(response.articles)
-    } catch (e) {
-      setArticles([])
-    }
+    const articles = await getTopNews({country: selectedCountry, term})
+    setArticles(articles)
   }
+
   const handleChange = (event) => {
     setTerm(event.target.value)
   }
+
   return (
     <Layout title={t('SEARCH_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}>
       <SearchInput value={term} onChange={handleChange} placeholder={t('SEARCH_PLACEHOLDER')} />
@@ -50,8 +48,8 @@ const Index = () => {
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common', 'footer']))
+    ...(await serverSideTranslations(locale, ['common']))
   }
 })
 
-export default Index
+export default SearchPage

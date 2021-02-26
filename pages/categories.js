@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import React, {useContext, useEffect, useState} from 'react'
 import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import React, {useContext, useEffect, useState} from 'react'
+import styled from 'styled-components'
 
 import {getTopNews} from '../service/NewsService'
 
@@ -8,8 +9,8 @@ import {CATEGORIES, CATEGORY, COUNTRIES} from '../common/consts.json'
 
 import Layout from '../components/Layout'
 import Category from '../components/Category'
+
 import {SelectedCountryContext} from './_app'
-import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
 const CategoriesContainer = styled.div`
   display: flex;
@@ -31,33 +32,30 @@ const CategoriesPage = () => {
   }, [selectedCountry])
 
   const loadNews = () => {
-    try {
-      CATEGORIES.forEach((category) => {
-        getTopNews({
-          country: COUNTRIES[selectedCountry].value,
-          category: category.value,
-          pageSize: MAX_ARTICLES_PER_CATEGORY
-        }).then((res) => {
-          setArticles((prevState) => {
-            return {...prevState, [category.value]: {news: res.articles, expanded: false}}
-          })
-        })
+    CATEGORIES.forEach(async (category) => {
+      const articles = await getTopNews({
+        country: COUNTRIES[selectedCountry].value,
+        category: category.value,
+        pageSize: MAX_ARTICLES_PER_CATEGORY
       })
-    } catch (e) {
-      setArticles([])
+      setArticles((prevState) => ({
+        ...prevState,
+        [category.value]: {news: articles, expanded: false}
+      }))
+    })
+  }
+  const onExpandCollapseCategory = (key) => {
+    if (articles[key]) {
+      setArticles((prevState) => {
+        return {...prevState, [key]: {...prevState[key], expanded: !prevState[key].expanded}}
+      })
     }
   }
 
-  const renderCategories = () => {
-    const onExpandCollapseCategory = (key) => {
-      if (articles[key]) {
-        setArticles((prevState) => {
-          return {...prevState, [key]: {...prevState[key], expanded: !prevState[key].expanded}}
-        })
-      }
-    }
-
-    return (
+  return (
+    <Layout
+      title={t('CATEGORIES_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}
+    >
       <CategoriesContainer>
         {CATEGORIES.map(({name, value}) => {
           const {news, expanded} = articles[value] || {}
@@ -74,21 +72,13 @@ const CategoriesPage = () => {
           )
         })}
       </CategoriesContainer>
-    )
-  }
-
-  return (
-    <Layout
-      title={t('CATEGORIES_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}
-    >
-      {renderCategories()}
     </Layout>
   )
 }
 
 export const getStaticProps = async ({locale}) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common', 'footer']))
+    ...(await serverSideTranslations(locale, ['common']))
   }
 })
 

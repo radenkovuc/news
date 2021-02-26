@@ -1,5 +1,6 @@
-import styled from 'styled-components'
 import React from 'react'
+import styled from 'styled-components'
+
 import NavigationItems from './NavigationItems'
 import CountryItems from './CountryItems'
 
@@ -31,24 +32,16 @@ type Props = {
   disableSelectionCountry: Boolean
 }
 
-const Layout = ({children, title, disableSelectionCountry}: Props) => {
-  const renderMenu = () => {
-    return (
-      <MenuContainer>
-        <NavigationItems />
-        <CountryItems isDisabled={disableSelectionCountry} />
-      </MenuContainer>
-    )
-  }
-
-  return (
-    <Container>
-      {renderMenu()}
-      {title && <Title>{title}</Title>}
-      {children}
-    </Container>
-  )
-}
+const Layout = ({children, title, disableSelectionCountry}: Props) => (
+  <Container>
+    <MenuContainer>
+      <NavigationItems />
+      <CountryItems isDisabled={disableSelectionCountry} />
+    </MenuContainer>
+    {title && <Title>{title}</Title>}
+    {children}
+  </Container>
+)
 
 Layout.defaultProps = {
   children: null,

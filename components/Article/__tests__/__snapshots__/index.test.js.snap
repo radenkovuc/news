@@ -2,26 +2,26 @@
 
 exports[`<Article /> match snapshot 1`] = `
 <div
-  className="ContentContainer-sc-1f0ayl8-0 hliDzp"
+  className="ContentContainer-sc-1f0ayl8-0 cfjAmd"
 >
   <div
-    className="Title-sc-1f0ayl8-1 dAZUHK"
+    className="Title-sc-1f0ayl8-1 dwzDBp"
   />
   <img
-    className="Image-sc-1f0ayl8-2 dnNfFW"
+    className="Image-sc-1f0ayl8-2 ilsyit"
   />
   <div
-    className="Content-sc-1f0ayl8-3 cZJuWB"
+    className="Content-sc-1f0ayl8-3 fnPcPG"
   />
   <div
-    className="Back-sc-1f0ayl8-4 gGOwFc"
+    className="Back-sc-1f0ayl8-4 ehdbsJ"
     onClick={[Function]}
   >
     <div
-      className="BackIcon-sc-1f0ayl8-6 coSRrl"
+      className="BackIcon-sc-1f0ayl8-6 bFZjGm"
     />
     <div
-      className="BackText-sc-1f0ayl8-5 hpndye"
+      className="BackText-sc-1f0ayl8-5 ffQJYe"
     >
       BACK_TO_LIST
     </div>

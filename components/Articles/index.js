@@ -12,17 +12,13 @@ type Props = {
   articles: Array
 }
 
-const Articles = (props: Props) => {
-  const {articles} = props
-
-  return (
-    <Container>
-      {articles.map((article, index) => {
-        return <ArticleCard key={index} article={article} useMobileStyle />
-      })}
-    </Container>
-  )
-}
+const Articles = ({articles}: Props) => (
+  <Container>
+    {articles.map((article, index) => {
+      return <ArticleCard key={index} article={article} useMobileStyle />
+    })}
+  </Container>
+)
 
 Articles.defaultProps = {
   articles: []

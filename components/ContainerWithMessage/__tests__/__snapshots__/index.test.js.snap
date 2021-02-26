@@ -2,10 +2,10 @@
 
 exports[`<ContainerWithMessage /> match snapshot 1`] = `
 <div
-  className="Container-sc-11nt41q-0 eGaekY"
+  className="Container-sc-11nt41q-0 hnURqu"
 >
   <div
-    className="Text-sc-11nt41q-1 AhBWR"
+    className="Text-sc-11nt41q-1 hKYipo"
   >
     
   </div>

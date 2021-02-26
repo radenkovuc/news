@@ -2,20 +2,20 @@
 
 exports[`<Category /> match snapshot 1`] = `
 <div
-  className="Container-fiywul-0 ZHjMz"
+  className="Container-fiywul-0 fpjmCq"
 >
   <div
-    className="TitleContainer-fiywul-1 imIMts"
+    className="TitleContainer-fiywul-1 mcDnB"
   >
     <div
-      className="Title-fiywul-2 iHHnJN"
+      className="Title-fiywul-2 bqCknc"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
       
     </div>
     <div
-      className="ShowHideIcon-fiywul-3 kcXKri"
+      className="ShowHideIcon-fiywul-3 dtOJXq"
       onClick={[Function]}
     />
   </div>

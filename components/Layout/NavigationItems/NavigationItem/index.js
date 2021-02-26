@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import React from 'react'
 import {useTranslation} from 'next-i18next'
 import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
 
 const Item = styled.div`
   display: flex;
@@ -35,9 +35,8 @@ type Props = {
   t: Function
 }
 
-const NavigationItem = (props: Props) => {
-  const {text, link, isActive} = props
-  const {t} = useTranslation('common')
+const NavigationItem = ({text, link, isActive}: Props) => {
+  const {t} = useTranslation()
 
   return (
     <Item isActive={isActive}>

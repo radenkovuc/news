@@ -1,8 +1,10 @@
-import {HEADER_MENU_ITEMS as headerRoutes} from '../../../common/consts.json'
 import styled from 'styled-components'
 import React from 'react'
-import NavigationItem from './NavigationItem'
 import {withRouter} from 'next/router'
+
+import NavigationItem from './NavigationItem'
+
+import {HEADER_MENU_ITEMS as headerRoutes} from '../../../common/consts.json'
 
 const Wrapper = styled.div`
   display: flex;
@@ -21,8 +23,7 @@ type Props = {
   router: Object
 }
 
-const NavigationItems = (props: Props) => {
-  const {router} = props
+const NavigationItems = ({router}: Props) => {
   const navItems = []
 
   // eslint-disable-next-line no-unused-vars

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import React from 'react'
-
+import React, {useContext} from 'react'
 import Link from 'next/link'
-import {ARTICLE} from '../../common/consts.json'
 import {useTranslation} from 'next-i18next'
+
+import {ARTICLE} from '../../common/consts.json'
+
+import {SelectedArticleContext} from '../../pages/_app'
 
 const Container = styled.div`
   width: ${(props) => (props.useMobileStyle ? '100%' : '300px;')};
@@ -73,18 +75,12 @@ const MoreIcon = styled.div`
 
 type Props = {
   article: Object,
-  useMobileStyle: Boolean,
-  appContext: Object,
-  t: Function
+  useMobileStyle: Boolean
 }
 
-const ArticleCard = (props: Props) => {
-  const {article, useMobileStyle} = props
+const ArticleCard = ({article, useMobileStyle}: Props) => {
+  const [, setSelectedArticle] = useContext(SelectedArticleContext)
   const {t} = useTranslation()
-
-  const onClickMore = () => {
-    // appContext.setContextData({selectedArticle: article})
-  }
 
   return (
     <Container useMobileStyle={useMobileStyle}>
@@ -92,7 +88,7 @@ const ArticleCard = (props: Props) => {
       <Image url={article.urlToImage} />
       <Description>{article.description}</Description>
       <Link href={ARTICLE.link}>
-        <More onClick={onClickMore}>
+        <More onClick={() => setSelectedArticle(article)}>
           <MoreText>{t('MORE')}</MoreText>
           <MoreIcon />
         </More>

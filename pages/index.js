@@ -1,6 +1,6 @@
-import React, {useEffect, useState, useContext} from 'react'
 import {useTranslation} from 'next-i18next'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import React, {useEffect, useState, useContext} from 'react'
 
 import {getTopNews} from '../service/NewsService'
 
@@ -11,7 +11,7 @@ import Articles from '../components/Articles'
 
 import {SelectedCountryContext} from './_app'
 
-const Search = () => {
+const IndexPage = () => {
   const [articles, setArticles] = useState([])
   const [selectedCountry] = useContext(SelectedCountryContext)
   const {t} = useTranslation()
@@ -21,12 +21,8 @@ const Search = () => {
   }, [selectedCountry])
 
   const loadNews = async () => {
-    try {
-      const response = await getTopNews({country: selectedCountry})
-      setArticles(response.articles)
-    } catch (e) {
-      setArticles([])
-    }
+    const articles = await getTopNews({country: selectedCountry})
+    setArticles(articles)
   }
 
   return (
@@ -42,4 +38,4 @@ export const getStaticProps = async ({locale}) => ({
   }
 })
 
-export default Search
+export default IndexPage

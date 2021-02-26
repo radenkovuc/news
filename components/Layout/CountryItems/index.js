@@ -20,8 +20,7 @@ const Wrapper = styled.div`
 `
 
 type Props = {
-  isDisabled: Boolean,
-  appContext: Object
+  isDisabled: Boolean
 }
 
 const CountryItems = ({isDisabled}: Props) => {

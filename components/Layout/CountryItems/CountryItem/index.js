@@ -33,8 +33,7 @@ type Props = {
   onClick: Boolean
 }
 
-const CountryItem = (props: Props) => {
-  const {text, isActive, isDisabled, onClick} = props
+const CountryItem = ({text, isActive, isDisabled, onClick}: Props) => {
   const {t} = useTranslation()
 
   return (
