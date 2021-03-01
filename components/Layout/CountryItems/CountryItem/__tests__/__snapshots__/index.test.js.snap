@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CountryItem /> match snapshot 1`] = `
+exports[`<CountryItem /> match snapshot default 1`] = `
 <div
   className="Item-fwh4iu-0 XAluN"
   onClick={[Function]}
@@ -9,6 +9,19 @@ exports[`<CountryItem /> match snapshot 1`] = `
     className="Text-fwh4iu-1 gPvOtr"
   >
     
+  </span>
+</div>
+`;
+
+exports[`<CountryItem /> match snapshot with data 1`] = `
+<div
+  className="Item-fwh4iu-0 kNtgHD"
+  onClick={[Function]}
+>
+  <span
+    className="Text-fwh4iu-1 gPvOtr"
+  >
+    Text
   </span>
 </div>
 `;

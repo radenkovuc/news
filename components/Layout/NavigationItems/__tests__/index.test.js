@@ -1,10 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import NavigationItems from '../index'
+
+import {createTextComponent} from '../../../../test/TestUtil'
+
+import NavigationItems from '../'
 
 describe('<NavigationItems />', () => {
   it('match snapshot', () => {
-    const tree = renderer.create(<NavigationItems />).toJSON()
+    const tree = renderer.create(createTextComponent(<NavigationItems />)).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

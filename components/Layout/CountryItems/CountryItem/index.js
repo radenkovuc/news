@@ -47,6 +47,7 @@ CountryItem.defaultProps = {
   text: '',
   expanded: false,
   isDisabled: false,
+  isActive: false,
   onClick: () => {}
 }
 

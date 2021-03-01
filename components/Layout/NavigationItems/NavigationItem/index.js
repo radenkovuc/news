@@ -31,8 +31,7 @@ const Text = styled.span`
 type Props = {
   text: String,
   link: String,
-  isActive: Boolean,
-  t: Function
+  isActive: Boolean
 }
 
 const NavigationItem = ({text, link, isActive}: Props) => {

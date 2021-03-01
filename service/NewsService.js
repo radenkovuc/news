@@ -1,12 +1,19 @@
 import NewsAPI from 'newsapi'
 
-const newsApi = new NewsAPI('6a924d8da586431fa7a913062dfad941', {
+import {mockedArticles} from '../test/MockedData'
+
+const newsApi = new NewsAPI(process.env.PUBLIC_NEWS_API_KEY, {
   corsProxyUrl: 'https://cors-anywhere.herokuapp.com/'
 })
 
 const DEFAULT_PAGE_SIZE = 100
 
-export const getTopNews = ({country, category = null, term, pageSize = DEFAULT_PAGE_SIZE}) => {
+export const getTopNews = async ({
+  country,
+  category = null,
+  term,
+  pageSize = DEFAULT_PAGE_SIZE
+}) => {
   try {
     const request = {country, pageSize}
     if (category) {
@@ -15,9 +22,14 @@ export const getTopNews = ({country, category = null, term, pageSize = DEFAULT_P
     if (term) {
       request.q = term
     }
-
-    const response = newsApi.v2.topHeadlines(request)
-    return response.articles
+    console.info(process.env.PUBLIC_USE_MOCK_DATA)
+    if (process.env.PUBLIC_USE_MOCK_DATA === 'true') {
+      console.info('usao')
+      return mockedArticles
+    } else {
+      const response = await newsApi.v2.topHeadlines(request)
+      return response.articles
+    }
   } catch (e) {
     return []
   }

@@ -2,24 +2,24 @@
 
 exports[`<CountryItems /> match snapshot 1`] = `
 <div
-  className="Wrapper-sc-176nf4l-0 hSHBvl"
+  className="Wrapper-sc-176nf4l-0 drBuzg"
 >
   <div
-    className="Item-fwh4iu-0 gPVQuN"
+    className="Item-fwh4iu-0 XAluN"
     onClick={[Function]}
   >
     <span
-      className="Text-fwh4iu-1 kKmCFw"
+      className="Text-fwh4iu-1 gPvOtr"
     >
       GB
     </span>
   </div>
   <div
-    className="Item-fwh4iu-0 gPVQuN"
+    className="Item-fwh4iu-0 loxUPt"
     onClick={[Function]}
   >
     <span
-      className="Text-fwh4iu-1 kKmCFw"
+      className="Text-fwh4iu-1 gPvOtr"
     >
       US
     </span>

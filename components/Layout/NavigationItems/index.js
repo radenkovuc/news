@@ -26,7 +26,6 @@ type Props = {
 const NavigationItems = ({router}: Props) => {
   const navItems = []
 
-  // eslint-disable-next-line no-unused-vars
   for (let route in headerRoutes) {
     // eslint-disable-next-line no-prototype-builtins
     if (headerRoutes.hasOwnProperty(route)) {
