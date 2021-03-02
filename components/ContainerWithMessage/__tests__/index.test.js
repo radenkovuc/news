@@ -1,10 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import ContainerWithMessage from '../index'
+
+import {createTextComponent} from '../../../test/TestUtil'
+
+import ContainerWithMessage from '../'
 
 describe('<ContainerWithMessage />', () => {
   it('match snapshot', () => {
-    const tree = renderer.create(<ContainerWithMessage />).toJSON()
+    const tree = renderer.create(createTextComponent(<ContainerWithMessage />)).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

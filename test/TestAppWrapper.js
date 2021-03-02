@@ -1,20 +1,19 @@
 import {appWithTranslation} from 'next-i18next'
-import React, {useState, createContext} from 'react'
+import React, {useState} from 'react'
 
-export const SelectedCountryContext = createContext()
-export const SelectedArticleContext = createContext()
+import {SelectedCountryContext, SelectedArticleContext} from '../pages/_app'
 
-const MyApp = ({Component, pageProps}) => {
+const TestAppWrapper = ({children}) => {
   const [selectedCountry, setSelectedCountry] = useState('US')
   const [selectedArticle, setSelectedArticle] = useState()
 
   return (
     <SelectedCountryContext.Provider value={[selectedCountry, setSelectedCountry]}>
       <SelectedArticleContext.Provider value={[selectedArticle, setSelectedArticle]}>
-        <Component {...pageProps} />
+        {children}
       </SelectedArticleContext.Provider>
     </SelectedCountryContext.Provider>
   )
 }
 
-export default appWithTranslation(MyApp)
+export default appWithTranslation(TestAppWrapper)

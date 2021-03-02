@@ -1,10 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import CountryItems from '../index'
+
+import {createTextComponent} from '../../../../test/TestUtil'
+
+import CountryItems from '../'
 
 describe('<CountryItems />', () => {
   it('match snapshot', () => {
-    const tree = renderer.create(<CountryItems />).toJSON()
+    const tree = renderer.create(createTextComponent(<CountryItems/>)).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

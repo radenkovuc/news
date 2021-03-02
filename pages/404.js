@@ -4,7 +4,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import ContainerWithMessage from '../components/ContainerWithMessage'
 
-const Error = () => (
+const Page404 = () => (
   <Layout disableSelectionCountry={true}>
     <ContainerWithMessage message={'ERROR_PAGE_MESSAGE'} />
   </Layout>
@@ -16,4 +16,4 @@ export const getStaticProps = async ({locale}) => ({
   }
 })
 
-export default Error
+export default Page404

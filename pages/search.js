@@ -1,11 +1,16 @@
+import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import React, {useContext, useEffect, useState} from 'react'
 import styled from 'styled-components'
-import React, {useEffect, useState} from 'react'
-import withTranslation from '../components/HOCs/withTranslation'
-import Layout from '../components/Layout'
+
 import {getTopNews} from '../service/NewsService'
-import withContext from '../components/HOCs/withContext'
-import Articles from '../components/Articles'
+
 import {COUNTRIES} from '../common/consts.json'
+
+import Layout from '../components/Layout'
+import Articles from '../components/Articles'
+
+import {SelectedCountryContext} from './_app'
 
 const SearchInput = styled.input`
   margin: 15px;
@@ -14,35 +19,25 @@ const SearchInput = styled.input`
   padding: 5px 20px 5px;
 `
 
-type Props = {
-  appContext: Object,
-  t: Function
-}
-
-const Index = (props: Props) => {
+const SearchPage = () => {
   const [articles, setArticles] = useState([])
   const [term, setTerm] = useState('')
-
-  const {
-    t,
-    appContext: {selectedCountry}
-  } = props
+  const [selectedCountry] = useContext(SelectedCountryContext)
+  const {t} = useTranslation()
 
   useEffect(() => {
     loadNews()
   }, [selectedCountry, term])
 
   const loadNews = async () => {
-    try {
-      const response = await getTopNews({country: selectedCountry, term})
-      setArticles(response.articles)
-    } catch (e) {
-      setArticles([])
-    }
+    const articles = await getTopNews({country: selectedCountry, term})
+    setArticles(articles)
   }
+
   const handleChange = (event) => {
     setTerm(event.target.value)
   }
+
   return (
     <Layout title={t('SEARCH_PAGE_TITLE', {country: t(COUNTRIES[selectedCountry].langKeyLong)})}>
       <SearchInput value={term} onChange={handleChange} placeholder={t('SEARCH_PLACEHOLDER')} />
@@ -51,8 +46,10 @@ const Index = (props: Props) => {
   )
 }
 
-Index.defaultProps = {
-  t: (t) => t
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+})
 
-export default withContext(withTranslation(Index))
+export default SearchPage

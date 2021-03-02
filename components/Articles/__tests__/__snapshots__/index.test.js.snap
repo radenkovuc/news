@@ -1,7 +1,630 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Articles /> match snapshot 1`] = `
+exports[`<Articles /> match snapshot default 1`] = `
 <div
-  className="Container-pznew3-0 bIbXSN"
+  className="Container-pznew3-0 ddsgyg"
 />
+`;
+
+exports[`<Articles /> match snapshot with articled 1`] = `
+<div
+  className="Container-pznew3-0 ddsgyg"
+>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Chelsea v Manchester United: Premier League – live! - The Guardian
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 dhPHbD"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Minute-by-minute report: Ole Gunnar Solskjær’s away-day specialists take on Thomas Tuchel’s revitalised Chelsea. Rob Smyth has the latest
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Fauci urges Americans to take any of three Covid vaccines available to them - The Guardian
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 bZRqMx"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      ‘I would have no hesitancy whatsoever,’ says Fauci in taking Johnson &amp; Johnson single-dose vaccine after FDA approval
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Roy Keane and Jamie Redknapp embroiled in explosive row on Sky Sports - Mirror Online
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 dHDGBW"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      The two pundits tore into each other on a number of topics ahead of Tottenham's clash with Burnley on Sunday
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      COVID-19 vaccine: 20 million people have received coronavirus jab in UK, says Matt Hancock - Sky News
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 dfSnvp"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Leicester 1-3 Arsenal: Gunners fight back again at injury-hit Leicester to move into top half - Sky Sports
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 bZItOG"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Arsenal produced another fightback as three goals in 17 minutes either side of half-time gave them a 3-1 victory at Leicester to prevent the Foxes moving second.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Budget: Rishi Sunak promises help as Covid restrictions ease - BBC News
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 Qxxrv"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      But the chancellor says he wants "to be honest" with the public about the shock suffered by the economy.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      'The Earth could hear itself think': how birdsong became the sound of lockdown - The Guardian
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 kaIMOC"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      When the pandemic hit, the song of birds offered joy and hope. The author of a new book recalls that glittering spring and explains the science behind bird calls
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Selby crash widow says 'tired driving' still a problem - BBC News
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 kQHDVu"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Mary Dunn's husband died in the rail crash caused by a driver who fell asleep at the wheel of his car.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Covid vaccine side effects: Health benefits could include fighting cancer and Alzheimer's - Express
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 ioZnLc"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      THE CORONAVIRUS vaccine programmes have been heralded as one of humanity's greatest achievements. Evidence from previous vaccines suggest the benefits could extend beyond viral protection.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Meghan Markle and Prince Harry 'look for new mail address' after Clarence House cuts ties - Mirror Online
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 fihrzz"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Prince Harry and Meghan are reportedly searching for a new arrangement for their correspondence as the Prince of Wales stopped financing the mail service at Clarence House
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Covid-19: Free rapid testing for pupils' families in England - BBC News
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 dANbie"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Schoolchildren's household and bubble members will be offered Covid tests to take at home twice a week.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Owen Farrell moment with Callum Sheedy 'the spirit of rugby personified' - Wales Online
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 fytPrv"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      England captain Owen Farrell has been praised for his apparent gesture towards Wales fly-half Callum Sheedy after his last conversion
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Rooster kills Indian man during banned cockfight | ITV News - ITV News
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 gOjxrY"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Cockfights are common in the southern Indian states of Telangana, Andhra Pradesh, Tamil Nadu and Karnataka despite a countrywide ban imposed in 1960.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Spacewalk underway, beginning process of increasing Space station's power capacity - NASASpaceFlight.com - NASASpaceflight.com
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 jxGpob"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Two astronauts aboard the International Space Station (ISS) are set to conduct a spacewalk to…
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Chancellor denies plan to rise taxes and then cut them before election - The Telegraph
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 bZRqMx"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    />
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Coronation Street actor Johnny Briggs dies aged 85 - The Guardian
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 bZRqMx"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Actor who played Mike Baldwin in long-running ITV soap dies after long illness
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Chancellor Rishi Sunak hints at furlough extension as he vows to 'continue protecting people' - The Sun
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 bZRqMx"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    />
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Microsoft patches serious NTFS drive corruption flaw in Windows 10… but there's a catch - BetaNews
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 dmaqEQ"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Around a month and a half ago we reported about a serious flaw in Windows 10 that could be exploited to corrupt the contents of an NTFS drive. With Microsoft dawdling in its response, it was down to security researchers from OSR to produce a third-party patch.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      Nervous Republicans watch on as Donald Trump prepares for first speech since leaving White House | ITV News - ITV News
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 fgJxvL"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      Donald Trump is set to speak publicly for the first time since leaving the White House - and there is good reason for some Republicans to be nervous.
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+  <div
+    className="Container-sc-4ap2jm-0 eVUPPg"
+  >
+    <div
+      className="Title-sc-4ap2jm-1 cDCmAt"
+    >
+      We’re gonna celebrate: How Daft Punk’s Discovery gave computer music soul - The Independent
+    </div>
+    <div
+      className="Image-sc-4ap2jm-2 cRaaiN"
+    />
+    <div
+      className="Description-sc-4ap2jm-3 brandn"
+    >
+      The French dance duo broke up this week, just ahead of the 20th anniversary of their album that introduced their masked alter egos to the world. Ed Power salutes a 2001 marvel
+    </div>
+    <div
+      className="More-sc-4ap2jm-4 byrmZV"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="MoreText-sc-4ap2jm-5 OlxGv"
+      >
+        MORE
+      </div>
+      <div
+        className="MoreIcon-sc-4ap2jm-6 hAUNxU"
+      />
+    </div>
+  </div>
+</div>
 `;
