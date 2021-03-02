@@ -1,19 +1,11 @@
-const {getENVPath} = require('./server/common/helpers')
-const env = require('dotenv').config({path: getENVPath()}).parsed
-const webpack = require('webpack')
+const {i18n} = require('./next-i18next.config')
+const nextEnv = require('next-env')
+const dotenvLoad = require('dotenv-load')
 
-module.exports = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
-    })
+dotenvLoad()
 
-    const envKeys = Object.keys(env).reduce((prev, next) => {
-      prev[`process.env.${next}`] = JSON.stringify(env[next])
-      return prev
-    }, {})
-    config.plugins.push(new webpack.DefinePlugin(envKeys))
-    return config
-  }
-}
+const withNextEnv = nextEnv({publicPrefix: 'PUBLIC_'})
+
+module.exports = withNextEnv({
+  i18n
+})

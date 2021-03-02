@@ -1,15 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NavigationItem /> match snapshot 1`] = `
+exports[`<NavigationItem /> match snapshot default 1`] = `
 <div
-  className="Item-sc-14w5znm-0 SlJzJ"
+  className="Item-sc-14w5znm-0 bpPYAL"
 >
   <span
-    className="Text-sc-14w5znm-1 jGVkFb"
+    className="Text-sc-14w5znm-1 kuEuFD"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
     
+  </span>
+</div>
+`;
+
+exports[`<NavigationItem /> match snapshot with data 1`] = `
+<div
+  className="Item-sc-14w5znm-0 evHWtr"
+>
+  <span
+    className="Text-sc-14w5znm-1 kuEuFD"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Text
   </span>
 </div>
 `;

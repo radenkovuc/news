@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import Router from 'next/router'
-import withTranslation from '../HOCs/withTranslation'
+import {useTranslation} from 'next-i18next'
 
 const ContentContainer = styled.div`
   padding: 10px;
@@ -47,12 +47,12 @@ const BackIcon = styled.div`
 `
 
 type Props = {
-  article: Object,
-  t: Function
+  article: Object
 }
 
-const Article = (props: Props) => {
-  const {article, t} = props
+const Article = ({article}: Props) => {
+  const {t} = useTranslation()
+
   return (
     <ContentContainer>
       <Title>{article.title}</Title>
@@ -70,4 +70,4 @@ Article.defaultProps = {
   article: {}
 }
 
-export default withTranslation(Article)
+export default Article

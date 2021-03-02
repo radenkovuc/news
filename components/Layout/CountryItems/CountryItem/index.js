@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import withTranslation from '../../../HOCs/withTranslation'
+import {useTranslation} from 'next-i18next'
 
 const Item = styled.div`
   display: flex;
@@ -30,12 +30,11 @@ type Props = {
   text: String,
   isActive: Boolean,
   isDisabled: Boolean,
-  onClick: Boolean,
-  t: Function
+  onClick: Boolean
 }
 
-const CountryItem = (props: Props) => {
-  const {text, isActive, isDisabled, onClick, t} = props
+const CountryItem = ({text, isActive, isDisabled, onClick}: Props) => {
+  const {t} = useTranslation()
 
   return (
     <Item isActive={isActive} isDisabled={isDisabled} onClick={onClick}>
@@ -48,8 +47,8 @@ CountryItem.defaultProps = {
   text: '',
   expanded: false,
   isDisabled: false,
-  onClick: () => {},
-  t: (t) => t
+  isActive: false,
+  onClick: () => {}
 }
 
-export default withTranslation(CountryItem)
+export default CountryItem

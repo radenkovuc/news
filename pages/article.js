@@ -1,51 +1,31 @@
-import styled from 'styled-components'
-import React from 'react'
-import withTranslation from '../components/HOCs/withTranslation'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import React, {useContext} from 'react'
+
 import Layout from '../components/Layout'
-import withContext from '../components/HOCs/withContext'
 import Article from '../components/Article'
 
-const NotFoundContainer = styled.div`
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`
+import ContainerWithMessage from '../components/ContainerWithMessage'
 
-const NotFoundText = styled.div`
-  text-align: center;
-  font-size: 22px;
-  font-family: 'Nunito Sans black', sans-serif;
-`
+import {SelectedArticleContext} from './_app'
 
-type Props = {
-  appContext: Object,
-  t: Function
-}
-
-const ArticlePage = (props: Props) => {
-  const {
-    t,
-    appContext: {selectedArticle}
-  } = props
-
-  const renderArticleNotFound = () => {
-    return (
-      <NotFoundContainer>
-        <NotFoundText>{t('ARTICLE_NOT_FOUND')}</NotFoundText>
-      </NotFoundContainer>
-    )
-  }
+const ArticlePage = () => {
+  const [selectedArticle] = useContext(SelectedArticleContext)
 
   return (
     <Layout disableSelectionCountry={true}>
-      {selectedArticle ? <Article article={selectedArticle} /> : renderArticleNotFound()}
+      {selectedArticle ? (
+        <Article article={selectedArticle} />
+      ) : (
+        <ContainerWithMessage message={'ARTICLE_NOT_FOUND'} />
+      )}
     </Layout>
   )
 }
 
-Article.defaultProps = {
-  t: (t) => t
-}
+export const getStaticProps = async ({locale}) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+})
 
-export default withContext(withTranslation(ArticlePage))
+export default ArticlePage

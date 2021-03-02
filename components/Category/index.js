@@ -1,8 +1,9 @@
 import ScrollMenu from 'react-horizontal-scrolling-menu'
-import ArticleCard from '../ArticleCard'
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from '../../i18n'
+import Link from 'next/link'
+
+import ArticleCard from '../ArticleCard'
 
 const Container = styled.div`
   display: flex;
@@ -28,8 +29,8 @@ const Title = styled.div`
 const ShowHideIcon = styled.div`
   width: 24px;
   height: 24px;
-  background: url('/static/images/${(props) =>
-    props.expanded ? 'collapse' : 'expand'}.svg') no-repeat center/cover;
+  background: url('/static/images/${(props) => (props.expanded ? 'collapse' : 'expand')}.svg')
+    no-repeat center/cover;
   cursor: pointer;
 `
 
@@ -57,38 +58,34 @@ type Props = {
   articles: Array
 }
 
-const Category = (props: Props) => {
-  const {title, expanded, link, onExpandCollapseCategory, articles} = props
-
-  const renderItems = (articles) => {
-    return (
-      articles &&
-      articles.map((article, index) => {
-        return <ArticleCard key={index} article={article} />
-      })
-    )
-  }
-
+const renderItems = (articles) => {
   return (
-    <Container>
-      <TitleContainer>
-        <Link href={link}>
-          <Title>{title}</Title>
-        </Link>
-        <ShowHideIcon onClick={onExpandCollapseCategory} expanded={expanded} />
-      </TitleContainer>
-      {expanded && (
-        <ScrollMenu
-          data={renderItems(articles)}
-          arrowLeft={<LeftArrow />}
-          arrowRight={<RightArrow />}
-          wheel={false}
-          alignCenter={false}
-        />
-      )}
-    </Container>
+    articles &&
+    articles.map((article, index) => {
+      return <ArticleCard key={index} article={article} />
+    })
   )
 }
+
+const Category = ({title, expanded, link, onExpandCollapseCategory, articles}: Props) => (
+  <Container>
+    <TitleContainer>
+      <Link href={link}>
+        <Title>{title}</Title>
+      </Link>
+      <ShowHideIcon onClick={onExpandCollapseCategory} expanded={expanded} />
+    </TitleContainer>
+    {expanded && (
+      <ScrollMenu
+        data={renderItems(articles)}
+        arrowLeft={<LeftArrow />}
+        arrowRight={<RightArrow />}
+        wheel={false}
+        alignCenter={false}
+      />
+    )}
+  </Container>
+)
 
 Category.defaultProps = {
   title: '',

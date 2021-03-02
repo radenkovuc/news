@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import React from 'react'
-import withTranslation from '../HOCs/withTranslation'
-import withContext from '../HOCs/withContext'
-import {Link} from '../../i18n'
+import React, {useContext} from 'react'
+import Link from 'next/link'
+import {useTranslation} from 'next-i18next'
+
 import {ARTICLE} from '../../common/consts.json'
+
+import {SelectedArticleContext} from '../../pages/_app'
 
 const Container = styled.div`
   width: ${(props) => (props.useMobileStyle ? '100%' : '300px;')};
@@ -73,17 +75,12 @@ const MoreIcon = styled.div`
 
 type Props = {
   article: Object,
-  useMobileStyle: Boolean,
-  appContext: Object,
-  t: Function
+  useMobileStyle: Boolean
 }
 
-const ArticleCard = (props: Props) => {
-  const {article, useMobileStyle, appContext, t} = props
-
-  const onClickMore = () => {
-    appContext.setContextData({selectedArticle: article})
-  }
+const ArticleCard = ({article, useMobileStyle}: Props) => {
+  const [, setSelectedArticle] = useContext(SelectedArticleContext)
+  const {t} = useTranslation()
 
   return (
     <Container useMobileStyle={useMobileStyle}>
@@ -91,7 +88,7 @@ const ArticleCard = (props: Props) => {
       <Image url={article.urlToImage} />
       <Description>{article.description}</Description>
       <Link href={ARTICLE.link}>
-        <More onClick={onClickMore}>
+        <More onClick={() => setSelectedArticle(article)}>
           <MoreText>{t('MORE')}</MoreText>
           <MoreIcon />
         </More>
@@ -102,8 +99,7 @@ const ArticleCard = (props: Props) => {
 
 ArticleCard.defaultProps = {
   article: {},
-  useMobileStyle: false,
-  t: (t) => t
+  useMobileStyle: false
 }
 
-export default withContext(withTranslation(ArticleCard))
+export default ArticleCard

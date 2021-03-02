@@ -1,12 +1,17 @@
+import {useTranslation} from 'next-i18next'
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
+import React, {useContext, useEffect, useState} from 'react'
 import styled from 'styled-components'
-import React, {useEffect, useState} from 'react'
-import withTranslation from '../../components/HOCs/withTranslation'
-import Layout from '../../components/Layout'
+
 import {CATEGORIES, COUNTRIES} from '../../common/consts.json'
+
+import {getTopNews} from '../../service/NewsService'
+
+import Layout from '../../components/Layout'
 import Articles from '../../components/Articles'
 import ContainerWithMessage from '../../components/ContainerWithMessage'
-import {getTopNews} from '../../service/NewsService'
-import withContext from '../../components/HOCs/withContext'
+
+import {SelectedCountryContext} from '../_app'
 
 const Title = styled.div`
   display: flex;
@@ -15,28 +20,10 @@ const Title = styled.div`
   font-family: 'Nunito Sans black', sans-serif;
 `
 
-const CategoryPage = (props) => {
+const CategoryPage = ({category}) => {
   const [articles, setArticles] = useState([])
-
-  const {
-    t,
-    category,
-    appContext: {selectedCountry}
-  } = props
-
-  const renderContent = () => {
-    return (
-      <>
-        <Title>
-          {t('CATEGORY_PAGE_TITLE', {
-            country: t(COUNTRIES[selectedCountry].langKeyLong),
-            category: t(category.name)
-          })}
-        </Title>
-        <Articles articles={articles} />
-      </>
-    )
-  }
+  const [selectedCountry] = useContext(SelectedCountryContext)
+  const {t} = useTranslation()
 
   useEffect(() => {
     if (category) {
@@ -45,25 +32,39 @@ const CategoryPage = (props) => {
   }, [selectedCountry, category])
 
   const loadNews = async () => {
-    try {
-      const response = await getTopNews({country: selectedCountry, category: category.value})
-      setArticles(response.articles)
-    } catch (e) {
-      setArticles([])
-    }
+    const articles = await getTopNews({country: selectedCountry, category: category.value})
+    setArticles(articles)
   }
+
+  const Content = () => (
+    <>
+      <Title>
+        {t('CATEGORY_PAGE_TITLE', {
+          country: t(COUNTRIES[selectedCountry].langKeyLong),
+          category: t(category.name)
+        })}
+      </Title>
+      <Articles articles={articles} />
+    </>
+  )
 
   return (
     <Layout>
-      {category ? renderContent() : <ContainerWithMessage message={'CATEGORY_NOT_FOUND'} />}
+      {category ? <Content /> : <ContainerWithMessage message={'CATEGORY_NOT_FOUND'} />}
     </Layout>
   )
 }
 
-CategoryPage.getInitialProps = (ctx) => {
-  const {name} = ctx.query
+export const getServerSideProps = async ({params, locale}) => {
+  const {name} = params
+
   const category = CATEGORIES.find((category) => category.value === name)
-  return {category}
+  return {
+    props: {
+      category,
+      ...(await serverSideTranslations(locale, ['common']))
+    }
+  }
 }
 
-export default withContext(withTranslation(CategoryPage))
+export default CategoryPage
